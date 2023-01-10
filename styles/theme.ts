@@ -1,11 +1,13 @@
-import { ThemeOptions } from "@material-ui/core/styles/createMuiTheme";
+import { ThemeOptions } from "@mui/material/styles";
+
+export const mainGradient: string =
+	"linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(26,26,26,1) 100%)";
 
 export const themeOptions: ThemeOptions = {
 	palette: {
-		type: "light",
+		mode: "light",
 		primary: {
 			main: "#1a1a1a",
-            mainGradient: "linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(26,26,26,1) 100%)",
 			dark: "#000000",
 		},
 		secondary: {
@@ -29,5 +31,5 @@ export const themeOptions: ThemeOptions = {
 // Something like this may work for the app bar
 // <AppBar
 //   position="static"
-//   style={{ background: theme.palette.primary.mainGradient }}
+//   style={{ background: mainGradient }}
 // >
