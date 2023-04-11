@@ -4,7 +4,7 @@ import Papa from "papaparse";
 import {
 	EntitlementDataRow,
 	OptimizedEntitlementData,
-} from "../model/EntitlementModel";
+} from "../types/EntitlementModel";
 
 const DATA_FOLDER: string = "data";
 const DATA_FILE_NAME_2023: string = "2023_us_entitlement_data.csv";

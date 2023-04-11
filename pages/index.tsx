@@ -2,9 +2,9 @@ import { useState } from "react";
 import {
 	EntitlementDataRow,
 	OptimizedEntitlementData,
-} from "../model/EntitlementModel";
+} from "../common/types/EntitlementModel";
 import styles from "../styles/Home.module.css";
-import { getLocalEntitlementData } from "../utility/localData";
+import { getLocalEntitlementData } from "../common/utils/localData";
 import { Button, TextField } from "@mui/material";
 
 interface EntitlementDataProps {
