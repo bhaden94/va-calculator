@@ -1,35 +1,44 @@
 import { Theme, createTheme } from "@mui/material/styles";
-import { green, purple } from "@mui/material/colors";
 
 export const theme: Theme = createTheme({
 	palette: {
+		contrastThreshold: 4.5,
 		primary: {
-			main: purple[500],
+			main: "#fff",
 		},
 		secondary: {
-			main: green[500],
+			main: "#000",
 		},
+		// text: {
+		//     primary: "red",
+		//     secondary: "blue",
+		// },
 	},
 	components: {
 		MuiPaper: {
 			styleOverrides: {
-				// Name of the slot
 				root: {
-					// Some CSS
 					background:
 						"url('./background-gradient.svg') no-repeat center center fixed",
 				},
 			},
 		},
-        MuiDivider: {
-            styleOverrides: {
-				// Name of the slot
+		MuiDivider: {
+			styleOverrides: {
 				root: {
-					// Some CSS
 					background:
-						"url('./gold-gradient.svg') no-repeat center center fixed",
+						"url('./gold-gradient.svg') no-repeat center center",
+					height: 2,
 				},
 			},
-        }
+		},
+		MuiButton: {
+			styleOverrides: {
+				root: {
+					background:
+						"url('./gold-gradient.svg') no-repeat center center",
+				},
+			},
+		},
 	},
 });

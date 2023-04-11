@@ -27,7 +27,7 @@ export default function NavBar() {
 
 	const drawer = (
 		<Box onClick={handleDrawerToggle}>
-			<TextLogo />
+			<TextLogo showTextLogo={true} />
 			<Divider variant="middle" />
 			<List>
 				{navItems.map((item) => (
@@ -53,7 +53,7 @@ export default function NavBar() {
 						onClick={handleDrawerToggle}
 						sx={{ mr: 2, display: { sm: "none" } }}
 					>
-						<MenuIcon />
+						<MenuIcon fontSize="large" sx={{ color: "#BE9E44" }} />
 					</IconButton>
 					<Typography
 						variant="h6"
@@ -63,11 +63,11 @@ export default function NavBar() {
 							display: { xs: "none", sm: "block" },
 						}}
 					>
-						MUI
+						<TextLogo showTextLogo={true} />
 					</Typography>
 					<Box sx={{ display: { xs: "none", sm: "block" } }}>
 						{navItems.map((item) => (
-							<Button key={item} sx={{ color: "#fff" }}>
+							<Button key={item}>
 								{item}
 							</Button>
 						))}
