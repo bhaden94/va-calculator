@@ -67,9 +67,7 @@ export default function NavBar() {
 					</Typography>
 					<Box sx={{ display: { xs: "none", sm: "block" } }}>
 						{navItems.map((item) => (
-							<Button key={item}>
-								{item}
-							</Button>
+							<Button key={item}>{item}</Button>
 						))}
 					</Box>
 				</Toolbar>
