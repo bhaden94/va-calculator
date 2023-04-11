@@ -5,7 +5,9 @@ import {
 } from "../common/types/EntitlementModel";
 import styles from "../styles/Home.module.css";
 import { getLocalEntitlementData } from "../common/utils/localData";
-import { Button, TextField } from "@mui/material";
+import { Button, TextField, ThemeProvider } from "@mui/material";
+import NavBar from "../common/components/NavBar/NavBar";
+import { theme } from "../common/utils/theme";
 
 interface EntitlementDataProps {
 	data: OptimizedEntitlementData;
@@ -22,7 +24,8 @@ const EntitlementData = ({ data }: EntitlementDataProps) => {
 	};
 
 	return (
-		<>
+		<ThemeProvider theme={theme}>
+			<NavBar />
 			<main className={styles.main}>
 				<div>
 					<TextField
@@ -50,7 +53,7 @@ const EntitlementData = ({ data }: EntitlementDataProps) => {
 					<p>{zipCodeData?.entitlement}</p>
 				</div>
 			</main>
-		</>
+		</ThemeProvider>
 	);
 };
 
