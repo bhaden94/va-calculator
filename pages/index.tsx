@@ -8,7 +8,7 @@ import NavBar from "../common/components/NavBar/NavBar";
 import { getLocalEntitlementData } from "../common/utils/localData";
 import styles from "../styles/Home.module.css";
 import { theme } from "../common/utils/theme";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { NavBarExtension } from "../common/components/NavBarExtension/NavBarExtension";
 import useAppBarHeight from "../common/hooks/useAppBarHeight";
 
@@ -23,9 +23,9 @@ const EntitlementData = ({ data }: EntitlementDataProps) => {
 	const [zipCode, setZipCode] = useState<string>("");
 	const appBarHeight = useAppBarHeight();
 
-	const recordZipCodeData = () => {
+	useEffect(() => {
 		setZipCodeData(data[zipCode]);
-	};
+	}, [zipCode]);
 
 	return (
 		<>
@@ -39,7 +39,7 @@ const EntitlementData = ({ data }: EntitlementDataProps) => {
 					<div className={styles.main}>
 						<TextField
 							label="Zip Code"
-							variant="filled"
+							variant="outlined"
 							fullWidth
 							value={zipCode}
 							onChange={(event) => setZipCode(event.target.value)}
@@ -52,13 +52,6 @@ const EntitlementData = ({ data }: EntitlementDataProps) => {
 									: ""
 							}
 						/>
-						<Button
-							variant="contained"
-							color="primary"
-							onClick={recordZipCodeData}
-						>
-							Submit
-						</Button>
 						<p style={{ color: "#000" }}>{zipCodeData?.zipCode}</p>
 						<p style={{ color: "#000" }}>{zipCodeData?.state}</p>
 						<p style={{ color: "#000" }}>{zipCodeData?.county}</p>

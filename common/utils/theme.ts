@@ -7,14 +7,16 @@ export const theme: Theme = createTheme({
 	palette: {
 		contrastThreshold: 4.5,
 		primary: {
-			main: "#fff",
+			main: "#d8c690",
+			light: "#d8c690",
+			dark: "#BE9E44",
+			contrastText: 'rgba(0, 0, 0, 0.87)',
 		},
 		secondary: {
 			main: "#000",
-		},
-		text: {
-			primary: "#fff",
-			secondary: "#000",
+			light: "#d8c690",
+			dark: "#BE9E44",
+			contrastText: 'rgba(0, 0, 0, 0.87)',
 		},
 	},
 	components: {
@@ -22,6 +24,7 @@ export const theme: Theme = createTheme({
 			styleOverrides: {
 				root: {
 					background: `url('./${BLACK_GRADIENT_NAME}') no-repeat center center fixed`,
+					color: "#fff"
 				},
 			},
 		},
