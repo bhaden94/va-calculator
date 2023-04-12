@@ -26,3 +26,12 @@ export const getLocalEntitlementData = (): OptimizedEntitlementData => {
 
 	return optimizeDataForZipCodeQuery(data);
 };
+
+export const getNonOptimizedData = (): EntitlementDataRow[] => {
+	const filePath = path.join(process.cwd(), DATA_FOLDER, DATA_FILE_NAME_2023);
+	const fileContent = fs.readFileSync(filePath, "utf-8");
+	const { data } = Papa.parse<EntitlementDataRow>(fileContent, {
+		header: true,
+	});
+	return data;
+};
