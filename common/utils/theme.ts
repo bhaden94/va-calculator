@@ -12,6 +12,10 @@ export const theme: Theme = createTheme({
 		secondary: {
 			main: "#000",
 		},
+		text: {
+			primary: "#fff",
+			secondary: "#000",
+		},
 	},
 	components: {
 		MuiPaper: {
@@ -33,6 +37,7 @@ export const theme: Theme = createTheme({
 			styleOverrides: {
 				contained: {
 					background: `url('./${GOLD_GRADIENT_NAME}') no-repeat center center`,
+					fontWeight: "bold",
 				},
 			},
 		},
