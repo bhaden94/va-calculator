@@ -31,7 +31,7 @@ export const NavBarExtension: FC<INavBarExtensionProps> = (props) => {
 	};
 	const collapsableInner: React.CSSProperties = {
 		height: "400px",
-		padding: "25% 25px",
+		padding: "85px 5%",
 	};
 	const row: React.CSSProperties = {
 		display: "flex",
