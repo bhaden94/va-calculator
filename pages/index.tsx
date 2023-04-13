@@ -51,7 +51,11 @@ function renderRow(props: ListChildComponentProps) {
 			<ListSubheader
 				key={dataSet.key}
 				component="div"
-				style={inlineStyle}
+				style={{
+					...inlineStyle,
+					color: theme.palette.secondary.main,
+					fontWeight: "bold",
+				}}
 			>
 				{dataSet.group}
 			</ListSubheader>
@@ -148,6 +152,10 @@ const StyledPopper = styled(Popper)({
 			margin: 0,
 		},
 	},
+	[`& .${autocompleteClasses.paper}`]: {
+		background: theme.palette.primary.main,
+		color: theme.palette.secondary.main,
+	},
 });
 
 const filterOptions = createFilterOptions({
@@ -174,21 +182,6 @@ const EntitlementData = ({ data, nonOptimizedData }: EntitlementDataProps) => {
 				<main style={{ marginTop: appBarHeight }}>
 					<NavBarExtension />
 					<div className={styles.main}>
-						<TextField
-							label="Zip Code"
-							variant="outlined"
-							fullWidth
-							value={zipCode}
-							onChange={(event) => setZipCode(event.target.value)}
-							error={
-								zipCode !== "" && !zipCode.match(ZIP_CODE_REGEX)
-							}
-							helperText={
-								zipCode !== "" && !zipCode.match(ZIP_CODE_REGEX)
-									? "Please enter a five digit zip code"
-									: ""
-							}
-						/>
 						<Autocomplete
 							id="virtualize-demo"
 							fullWidth
@@ -202,7 +195,10 @@ const EntitlementData = ({ data, nonOptimizedData }: EntitlementDataProps) => {
 								`${option.zipCode}, ${option.county}, ${option.state}`
 							}
 							renderInput={(params) => (
-								<TextField {...params} label="Zip Code, County, State" />
+								<TextField
+									{...params}
+									label="Zip Code, County, State"
+								/>
 							)}
 							renderOption={(props, option, state) =>
 								[props, option, state.index] as React.ReactNode
