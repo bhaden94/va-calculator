@@ -1,41 +1,32 @@
 import {
 	Autocomplete,
+	ListSubheader,
+	Popper,
 	TextField,
-	TextFieldProps,
 	ThemeProvider,
 	Typography,
-	useTheme,
-	styled,
 	autocompleteClasses,
 	createFilterOptions,
+	styled,
+	useMediaQuery,
+	useTheme,
 } from "@mui/material";
-import {
-	EntitlementDataRow,
-	OptimizedEntitlementData,
-} from "../common/types/EntitlementModel";
+import { ListChildComponentProps, VariableSizeList } from "react-window";
+import { EntitlementDataRow } from "../common/types/EntitlementModel";
 import Head from "next/head";
 import NavBar from "../common/components/NavBar/NavBar";
-import {
-	getLocalEntitlementData,
-	getNonOptimizedData,
-} from "../common/utils/localData";
-import { VariableSizeList, ListChildComponentProps } from "react-window";
-import useMediaQuery from "@mui/material/useMediaQuery";
+import { NavBarExtension } from "../common/components/NavBarExtension/NavBarExtension";
+import React from "react";
+import { getNonOptimizedData } from "../common/utils/localData";
 import styles from "../styles/Home.module.css";
 import { theme } from "../common/utils/theme";
-import { useEffect, useState } from "react";
-import { NavBarExtension } from "../common/components/NavBarExtension/NavBarExtension";
-import ListSubheader from "@mui/material/ListSubheader";
 import useAppBarHeight from "../common/hooks/useAppBarHeight";
-import React from "react";
-import Popper from "@mui/material/Popper";
+import { useState } from "react";
 
 interface EntitlementDataProps {
-	data: OptimizedEntitlementData;
 	nonOptimizedData: EntitlementDataRow[];
 }
 
-const ZIP_CODE_REGEX = "^([0-9]{5})$";
 const LISTBOX_PADDING = 8; // px
 
 function renderRow(props: ListChildComponentProps) {
@@ -75,6 +66,7 @@ const OuterElementType = React.forwardRef<HTMLDivElement>((props, ref) => {
 	const outerProps = React.useContext(OuterElementContext);
 	return <div ref={ref} {...props} {...outerProps} />;
 });
+OuterElementType.displayName = "OuterElementType";
 
 function useResetCache(data: any) {
 	const ref = React.useRef<VariableSizeList>(null);
@@ -163,14 +155,9 @@ const filterOptions = createFilterOptions({
 		`${zipCode}, ${county}, ${state}`,
 });
 
-const EntitlementData = ({ data, nonOptimizedData }: EntitlementDataProps) => {
-	const [zipCodeData, setZipCodeData] = useState<EntitlementDataRow>();
-	const [zipCode, setZipCode] = useState<string>("");
+const EntitlementData = ({ nonOptimizedData }: EntitlementDataProps) => {
+	const [zipCodeData, setZipCodeData] = useState<EntitlementDataRow | null>();
 	const appBarHeight = useAppBarHeight();
-
-	useEffect(() => {
-		setZipCodeData(data[zipCode]);
-	}, [zipCode]);
 
 	return (
 		<>
@@ -185,6 +172,12 @@ const EntitlementData = ({ data, nonOptimizedData }: EntitlementDataProps) => {
 						<Autocomplete
 							id="virtualize-demo"
 							fullWidth
+							onChange={(
+								e: any,
+								newValue: EntitlementDataRow | null
+							) => {
+								setZipCodeData(newValue);
+							}}
 							disableListWrap
 							PopperComponent={StyledPopper}
 							ListboxComponent={ListboxComponent}
@@ -221,9 +214,9 @@ const EntitlementData = ({ data, nonOptimizedData }: EntitlementDataProps) => {
 };
 
 export async function getStaticProps() {
-	const entitlementData = getLocalEntitlementData();
+	//const entitlementData = getLocalEntitlementData();
 	const nonOptimized = getNonOptimizedData();
-	return { props: { data: entitlementData, nonOptimizedData: nonOptimized } };
+	return { props: { nonOptimizedData: nonOptimized } };
 }
 
 export default EntitlementData;
