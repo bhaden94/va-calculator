@@ -2,12 +2,10 @@ import { Box, Button, Paper, Theme } from "@mui/material";
 import React, { FC, useState } from "react";
 import Typography from "@mui/material/Typography";
 
-interface INavBarExtensionProps {}
-
 const UP_HEIGHT = 175;
 const DOWN_HEIGHT = 575;
 
-export const NavBarExtension: FC<INavBarExtensionProps> = (props) => {
+export const NavBarExtension: FC = () => {
 	const [height, setHeight] = useState<number>(UP_HEIGHT);
 	const paperStyle: React.CSSProperties = {
 		width: "100%",
@@ -36,7 +34,7 @@ export const NavBarExtension: FC<INavBarExtensionProps> = (props) => {
 	const row: React.CSSProperties = {
 		display: "flex",
 		justifyContent: "space-between",
-        margin: "25px 0"
+		margin: "25px 0",
 	};
 	const leftColumn: React.CSSProperties = {
 		textAlign: "left",
