@@ -1,12 +1,15 @@
 import { Box, Button, Paper, Theme } from "@mui/material";
 import React, { FC, useState } from "react";
 import Typography from "@mui/material/Typography";
+import { useChosenEntitlementDataRow } from "../../hooks/EntitlementDataContext";
 
 const UP_HEIGHT = 175;
 const DOWN_HEIGHT = 575;
 
 export const NavBarExtension: FC = () => {
 	const [height, setHeight] = useState<number>(UP_HEIGHT);
+	const { chosenEntitlementDataRow } = useChosenEntitlementDataRow();
+
 	const paperStyle: React.CSSProperties = {
 		width: "100%",
 		height: height,
@@ -61,12 +64,22 @@ export const NavBarExtension: FC = () => {
 		else setHeight(UP_HEIGHT);
 	};
 
+	const formatNumberOrReturnDefault = (
+		number: string | undefined
+	): string => {
+		if (!number) return "-";
+		return Number(number).toLocaleString();
+	};
+
 	return (
 		<Paper style={paperStyle} elevation={4}>
 			<div style={divStyle}>
 				<Typography>Required Down Payment</Typography>
 				<Typography fontSize="3.1rem" fontWeight="bold">
-					$35,000
+					$
+					{formatNumberOrReturnDefault(
+						chosenEntitlementDataRow?.entitlement
+					)}
 				</Typography>
 				<div
 					style={{
@@ -80,7 +93,11 @@ export const NavBarExtension: FC = () => {
 								<Typography>County limit</Typography>
 							</Box>
 							<Box style={rightColumn}>
-								<Typography>234523</Typography>
+								<Typography>
+									{formatNumberOrReturnDefault(
+										chosenEntitlementDataRow?.entitlement
+									)}
+								</Typography>
 							</Box>
 						</Box>
 						<Box style={row}>

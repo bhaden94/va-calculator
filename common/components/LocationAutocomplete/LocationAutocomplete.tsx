@@ -5,6 +5,7 @@ import React from "react";
 import { ListboxComponent } from "./ListboxComponent";
 import { StyledPopper } from "./StyledPopper";
 import { filterOptions } from "../../utils/locationAutocompleteUtils";
+import { useChosenEntitlementDataRow } from "../../hooks/EntitlementDataContext";
 
 interface ILocationAutocompleteProps {
 	entitlementData: EntitlementDataRow[];
@@ -13,13 +14,15 @@ interface ILocationAutocompleteProps {
 export const LocationAutocomplete: FC<ILocationAutocompleteProps> = ({
 	entitlementData,
 }) => {
+	const { setChosenEntitlementDataRow } = useChosenEntitlementDataRow();
+
 	return (
 		<div style={{ width: "100%" }}>
 			<Autocomplete
 				id="virtualize-demo"
 				fullWidth
 				onChange={(e: any, newValue: EntitlementDataRow | null) => {
-					console.log(newValue);
+					setChosenEntitlementDataRow(newValue);
 				}}
 				disableListWrap
 				PopperComponent={StyledPopper}
