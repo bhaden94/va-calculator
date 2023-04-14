@@ -16,6 +16,7 @@ export const LocationAutocomplete: FC<ILocationAutocompleteProps> = ({
 }) => {
 	const { setChosenEntitlementDataRow } = useChosenEntitlementDataRow();
 
+	// TODO: Handle rows with long text getting cut off on mobile. 
 	return (
 		<div style={{ width: "100%" }}>
 			<Autocomplete
