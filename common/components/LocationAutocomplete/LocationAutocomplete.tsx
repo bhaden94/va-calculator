@@ -19,8 +19,9 @@ export const LocationAutocomplete: FC<ILocationAutocompleteProps> = ({
 	return (
 		<div style={{ width: "100%" }}>
 			<Autocomplete
-				id="virtualize-demo"
+				id="location-autocomplete"
 				fullWidth
+				sx={{ margin: "8px 0" }}
 				onChange={(e: any, newValue: EntitlementDataRow | null) => {
 					setChosenEntitlementDataRow(newValue);
 				}}

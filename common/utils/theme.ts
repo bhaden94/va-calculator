@@ -72,5 +72,24 @@ export const theme: Theme = createTheme({
 				},
 			},
 		},
+		MuiInputLabel: {
+			styleOverrides: {
+				root: {
+					"&.Mui-focused": {
+						color: "#1a1a1a",
+					},
+				},
+			},
+		},
+		MuiOutlinedInput: {
+			styleOverrides: {
+				root: {
+					"&.Mui-focused .MuiOutlinedInput-notchedOutline ": {
+						borderColor: "#1a1a1a",
+						borderWidth: 1,
+					},
+				},
+			},
+		},
 	},
 });

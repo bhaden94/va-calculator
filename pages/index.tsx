@@ -11,6 +11,7 @@ import styles from "../styles/Home.module.css";
 import { theme } from "../common/utils/theme";
 import useAppBarHeight from "../common/hooks/useAppBarHeight";
 import { useState } from "react";
+import { HomePriceInput } from "../common/components/HomePriceInput/HomePriceInput";
 
 interface EntitlementDataProps {
 	nonOptimizedData: EntitlementDataRow[];
@@ -33,18 +34,8 @@ const EntitlementData = ({ nonOptimizedData }: EntitlementDataProps) => {
 							<LocationAutocomplete
 								entitlementData={nonOptimizedData}
 							/>
-							{/* <p style={{ color: "#000" }}>
-								{zipCodeData?.zipCode}
-							</p>
-							<p style={{ color: "#000" }}>
-								{zipCodeData?.state}
-							</p>
-							<p style={{ color: "#000" }}>
-								{zipCodeData?.county}
-							</p>
-							<p style={{ color: "#000" }}>
-								{zipCodeData?.entitlement}
-							</p> */}
+							<HomePriceInput inputLabel="Original Loan Amount" />
+							<HomePriceInput inputLabel="New Home Price" />
 						</div>
 					</EntitlementDataProvider>
 				</main>
