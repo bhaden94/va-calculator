@@ -33,13 +33,13 @@ export const InputFormField: FC<IInputFormFieldProps> = ({
 			</InputLabel>
 			<OutlinedInput
 				id={`${inputLabel}-input`}
-				inputProps={{ inputMode: "numeric", pattern: "[0-9]*" }}
-				startAdornment={
-					<InputAdornment position="start">$</InputAdornment>
-				}
 				label={inputLabel}
 				value={value}
 				onChange={handleChange}
+				inputProps={{ maxLength: 9 }}
+				startAdornment={
+					<InputAdornment position="start">$</InputAdornment>
+				}
 			/>
 		</FormControl>
 	);
