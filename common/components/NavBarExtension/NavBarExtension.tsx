@@ -84,7 +84,7 @@ export const NavBarExtension: FC = () => {
 			<div style={divStyle}>
 				<Typography>Required Down Payment</Typography>
 				<Typography fontSize="3.1rem" fontWeight="bold">
-					{formatNumberOrReturnDefault(downPayment)}
+					${formatNumberOrReturnDefault(downPayment)}
 				</Typography>
 				<div
 					style={{
