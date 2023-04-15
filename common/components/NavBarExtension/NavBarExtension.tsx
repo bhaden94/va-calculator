@@ -1,6 +1,7 @@
 import { Box, Button, Paper } from "@mui/material";
 import React, { FC, useState } from "react";
 import Typography from "@mui/material/Typography";
+import { useEntitlementCalculations } from "../../hooks/useEntitlementCalculation";
 import { useEntitlementDataInput } from "../../hooks/EntitlementDataContext";
 
 const UP_HEIGHT = 175;
@@ -8,11 +9,13 @@ const DOWN_HEIGHT = 575;
 
 export const NavBarExtension: FC = () => {
 	const [height, setHeight] = useState<number>(UP_HEIGHT);
+	const { chosenEntitlementDataState } = useEntitlementDataInput();
 	const {
-		chosenEntitlementDataState,
-		originalLoanAmountState,
-		newHomePriceState,
-	} = useEntitlementDataInput();
+		entitlementUsed,
+		availableEntitlement,
+		downPayment,
+		maxLoanNoDown,
+	} = useEntitlementCalculations();
 
 	const paperStyle: React.CSSProperties = {
 		width: "100%",
@@ -81,11 +84,7 @@ export const NavBarExtension: FC = () => {
 			<div style={divStyle}>
 				<Typography>Required Down Payment</Typography>
 				<Typography fontSize="3.1rem" fontWeight="bold">
-					{/* TODO: change to calculated value */}$
-					{formatNumberOrReturnDefault(
-						chosenEntitlementDataState.chosenEntitlementDataRow
-							?.entitlement
-					)}
+					{formatNumberOrReturnDefault(downPayment)}
 				</Typography>
 				<div
 					style={{
@@ -100,7 +99,6 @@ export const NavBarExtension: FC = () => {
 							</Box>
 							<Box style={rightColumn}>
 								<Typography>
-									{/* TODO: change to calculated value */}
 									{formatNumberOrReturnDefault(
 										chosenEntitlementDataState
 											.chosenEntitlementDataRow
@@ -115,9 +113,8 @@ export const NavBarExtension: FC = () => {
 							</Box>
 							<Box style={rightColumn}>
 								<Typography>
-									{/* TODO: change to calculated value */}
 									{formatNumberOrReturnDefault(
-										originalLoanAmountState?.originalLoanAmount
+										entitlementUsed
 									)}
 								</Typography>
 							</Box>
@@ -128,9 +125,8 @@ export const NavBarExtension: FC = () => {
 							</Box>
 							<Box style={rightColumn}>
 								<Typography>
-									{/* TODO: change to calculated value */}
 									{formatNumberOrReturnDefault(
-										newHomePriceState?.newHomePrice
+										availableEntitlement
 									)}
 								</Typography>
 							</Box>
@@ -140,8 +136,9 @@ export const NavBarExtension: FC = () => {
 								<Typography>Max loan with 0% down</Typography>
 							</Box>
 							<Box style={rightColumn}>
-								{/* TODO: change to calculated value */}
-								<Typography>23452345</Typography>
+								<Typography>
+									{formatNumberOrReturnDefault(maxLoanNoDown)}
+								</Typography>
 							</Box>
 						</Box>
 					</div>

@@ -55,7 +55,7 @@ function EntitlementDataProvider({ children }: EntitlementDataProviderProps) {
 	);
 }
 
-function useEntitlementDataInput() {
+function useEntitlementDataInput(): EntitlementDataContextValue {
 	const context = useContext(EntitlementDataContext);
 	if (context === undefined) {
 		throw new Error(
