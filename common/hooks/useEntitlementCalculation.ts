@@ -28,6 +28,8 @@ function calculateAvailableEntitlement(
 	const totalEntitlement = convertedEntitlement * 0.25;
 	const availableEntitlement = totalEntitlement - convertedEntitlementUsed;
 
+	if (availableEntitlement <= 0) return "0";
+
 	return availableEntitlement.toString();
 }
 
@@ -67,6 +69,8 @@ function calculateMaxLoanNoDown(availableEntitlement: string | null): string {
 	if (!convertedAvailableEntitlement) return "";
 
 	const maxLoan = convertedAvailableEntitlement * 4;
+
+	if (maxLoan <= 0) return "0";
 
 	return maxLoan.toString();
 }
