@@ -1,6 +1,7 @@
 import { EntitlementDataProvider } from "../common/hooks/EntitlementDataContext";
 import { EntitlementDataRow } from "../common/types/EntitlementModel";
 import Head from "next/head";
+import { HomePriceInput } from "../common/components/HomePriceInput/HomePriceInput";
 import { LocationAutocomplete } from "../common/components/LocationAutocomplete/LocationAutocomplete";
 import NavBar from "../common/components/NavBar/NavBar";
 import { NavBarExtension } from "../common/components/NavBarExtension/NavBarExtension";
@@ -10,8 +11,6 @@ import { getNonOptimizedData } from "../common/utils/localData";
 import styles from "../styles/Home.module.css";
 import { theme } from "../common/utils/theme";
 import useAppBarHeight from "../common/hooks/useAppBarHeight";
-import { useState } from "react";
-import { HomePriceInput } from "../common/components/HomePriceInput/HomePriceInput";
 
 interface EntitlementDataProps {
 	nonOptimizedData: EntitlementDataRow[];
@@ -34,8 +33,7 @@ const EntitlementData = ({ nonOptimizedData }: EntitlementDataProps) => {
 							<LocationAutocomplete
 								entitlementData={nonOptimizedData}
 							/>
-							<HomePriceInput inputLabel="Original Loan Amount" />
-							<HomePriceInput inputLabel="New Home Price" />
+							<HomePriceInput />
 						</div>
 					</EntitlementDataProvider>
 				</main>

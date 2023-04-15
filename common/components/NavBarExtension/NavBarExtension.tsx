@@ -1,14 +1,18 @@
-import { Box, Button, Paper, Theme } from "@mui/material";
+import { Box, Button, Paper } from "@mui/material";
 import React, { FC, useState } from "react";
 import Typography from "@mui/material/Typography";
-import { useChosenEntitlementDataRow } from "../../hooks/EntitlementDataContext";
+import { useEntitlementDataInput } from "../../hooks/EntitlementDataContext";
 
 const UP_HEIGHT = 175;
 const DOWN_HEIGHT = 575;
 
 export const NavBarExtension: FC = () => {
 	const [height, setHeight] = useState<number>(UP_HEIGHT);
-	const { chosenEntitlementDataRow } = useChosenEntitlementDataRow();
+	const {
+		chosenEntitlementDataState,
+		originalLoanAmountState,
+		newHomePriceState,
+	} = useEntitlementDataInput();
 
 	const paperStyle: React.CSSProperties = {
 		width: "100%",
@@ -65,10 +69,11 @@ export const NavBarExtension: FC = () => {
 	};
 
 	const formatNumberOrReturnDefault = (
-		number: string | undefined
+		number: string | undefined | null
 	): string => {
-		if (!number) return "-";
-		return Number(number).toLocaleString();
+		const convertedNumber = Number(number);
+		if (!number || !convertedNumber) return "-";
+		return convertedNumber.toLocaleString();
 	};
 
 	return (
@@ -76,9 +81,10 @@ export const NavBarExtension: FC = () => {
 			<div style={divStyle}>
 				<Typography>Required Down Payment</Typography>
 				<Typography fontSize="3.1rem" fontWeight="bold">
-					$
+					{/* TODO: change to calculated value */}$
 					{formatNumberOrReturnDefault(
-						chosenEntitlementDataRow?.entitlement
+						chosenEntitlementDataState.chosenEntitlementDataRow
+							?.entitlement
 					)}
 				</Typography>
 				<div
@@ -94,8 +100,11 @@ export const NavBarExtension: FC = () => {
 							</Box>
 							<Box style={rightColumn}>
 								<Typography>
+									{/* TODO: change to calculated value */}
 									{formatNumberOrReturnDefault(
-										chosenEntitlementDataRow?.entitlement
+										chosenEntitlementDataState
+											.chosenEntitlementDataRow
+											?.entitlement
 									)}
 								</Typography>
 							</Box>
@@ -105,7 +114,12 @@ export const NavBarExtension: FC = () => {
 								<Typography>Entitlement used</Typography>
 							</Box>
 							<Box style={rightColumn}>
-								<Typography>23452345</Typography>
+								<Typography>
+									{/* TODO: change to calculated value */}
+									{formatNumberOrReturnDefault(
+										originalLoanAmountState?.originalLoanAmount
+									)}
+								</Typography>
 							</Box>
 						</Box>
 						<Box style={row}>
@@ -113,7 +127,12 @@ export const NavBarExtension: FC = () => {
 								<Typography>Available entitlement</Typography>
 							</Box>
 							<Box style={rightColumn}>
-								<Typography>23452345</Typography>
+								<Typography>
+									{/* TODO: change to calculated value */}
+									{formatNumberOrReturnDefault(
+										newHomePriceState?.newHomePrice
+									)}
+								</Typography>
 							</Box>
 						</Box>
 						<Box style={row}>
@@ -121,6 +140,7 @@ export const NavBarExtension: FC = () => {
 								<Typography>Max loan with 0% down</Typography>
 							</Box>
 							<Box style={rightColumn}>
+								{/* TODO: change to calculated value */}
 								<Typography>23452345</Typography>
 							</Box>
 						</Box>

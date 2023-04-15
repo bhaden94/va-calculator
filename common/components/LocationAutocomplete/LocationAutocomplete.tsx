@@ -5,7 +5,7 @@ import React from "react";
 import { ListboxComponent } from "./ListboxComponent";
 import { StyledPopper } from "./StyledPopper";
 import { filterOptions } from "../../utils/locationAutocompleteUtils";
-import { useChosenEntitlementDataRow } from "../../hooks/EntitlementDataContext";
+import { useEntitlementDataInput } from "../../hooks/EntitlementDataContext";
 
 interface ILocationAutocompleteProps {
 	entitlementData: EntitlementDataRow[];
@@ -14,9 +14,9 @@ interface ILocationAutocompleteProps {
 export const LocationAutocomplete: FC<ILocationAutocompleteProps> = ({
 	entitlementData,
 }) => {
-	const { setChosenEntitlementDataRow } = useChosenEntitlementDataRow();
+	const { chosenEntitlementDataState } = useEntitlementDataInput();
 
-	// TODO: Handle rows with long text getting cut off on mobile. 
+	// TODO: Handle rows with long text getting cut off on mobile.
 	return (
 		<div style={{ width: "100%" }}>
 			<Autocomplete
@@ -24,7 +24,9 @@ export const LocationAutocomplete: FC<ILocationAutocompleteProps> = ({
 				fullWidth
 				sx={{ margin: "8px 0" }}
 				onChange={(e: any, newValue: EntitlementDataRow | null) => {
-					setChosenEntitlementDataRow(newValue);
+					chosenEntitlementDataState.setChosenEntitlementDataRow(
+						newValue
+					);
 				}}
 				disableListWrap
 				PopperComponent={StyledPopper}
