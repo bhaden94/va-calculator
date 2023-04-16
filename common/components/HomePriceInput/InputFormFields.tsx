@@ -26,6 +26,8 @@ export const InputFormField: FC<IInputFormFieldProps> = ({
 		setValue(formatted); // This is the formatted value. Ex: 123,456
 	};
 
+    //https://stackoverflow.com/questions/46000544/react-controlled-input-cursor-jumps
+    // Cursor jumps when changing values. See above link for fix
 	return (
 		<FormControl fullWidth sx={{ margin: "8px 0" }}>
 			<InputLabel htmlFor={`${inputLabel}-input`}>

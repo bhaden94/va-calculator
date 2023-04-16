@@ -75,7 +75,8 @@ export const NavBarExtension: FC = () => {
 		number: string | undefined | null
 	): string => {
 		const convertedNumber = Number(number);
-		if (!number || !convertedNumber) return "-";
+		if (!number) return "-";
+		if (!convertedNumber) return "0";
 		return convertedNumber.toLocaleString();
 	};
 

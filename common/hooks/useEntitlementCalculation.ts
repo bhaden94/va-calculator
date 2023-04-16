@@ -8,11 +8,20 @@ interface EntitlementCalculations {
 	maxLoanNoDown: string | null;
 }
 
-function calculateEntitlementUsed(originalLoanAmount: string | null): string {
-	const convertedNumber: number = Number(originalLoanAmount);
-	if (!convertedNumber) "";
+function calculateEntitlementUsed(
+	originalLoanAmount: string | null,
+	locationEntitlement: string | null | undefined
+): string {
+	const convertedLoanAmount: number = Number(originalLoanAmount);
+	const convertedEntitlement: number = Number(locationEntitlement);
+	if (
+		!convertedLoanAmount ||
+		!convertedEntitlement ||
+		convertedLoanAmount > convertedEntitlement
+	)
+		"";
 
-	const entitlementUsed = convertedNumber * 0.25;
+	const entitlementUsed = convertedLoanAmount * 0.25;
 
 	return entitlementUsed.toString();
 }
@@ -87,10 +96,16 @@ export function useEntitlementCalculations(): EntitlementCalculations {
 	useEffect(() => {
 		setEntitlementUsed(
 			calculateEntitlementUsed(
-				context?.originalLoanAmountState?.originalLoanAmount
+				context?.originalLoanAmountState?.originalLoanAmount,
+				context?.chosenEntitlementDataState?.chosenEntitlementDataRow
+					?.entitlement
 			)
 		);
-	}, [context?.originalLoanAmountState?.originalLoanAmount]);
+	}, [
+		context?.originalLoanAmountState?.originalLoanAmount,
+		context?.chosenEntitlementDataState?.chosenEntitlementDataRow
+			?.entitlement,
+	]);
 
 	useEffect(() => {
 		setAvailableEntitlement(
