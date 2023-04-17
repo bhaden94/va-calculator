@@ -77,7 +77,7 @@ export const NavBarExtension: FC = () => {
 		const convertedNumber = Number(number);
 		if (!number) return "-";
 		if (!convertedNumber) return "0";
-		return convertedNumber.toLocaleString();
+		return Math.round(convertedNumber).toLocaleString();
 	};
 
 	return (

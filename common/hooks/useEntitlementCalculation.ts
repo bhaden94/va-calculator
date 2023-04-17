@@ -70,7 +70,7 @@ function calculateDownPayment(
 
 	if (downPayment <= 0) return "0";
 
-	return Math.round(downPayment).toString();
+	return downPayment.toString();
 }
 
 function calculateMaxLoanNoDown(availableEntitlement: string | null): string {
