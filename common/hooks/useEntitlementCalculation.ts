@@ -19,7 +19,7 @@ function calculateEntitlementUsed(
 		!convertedEntitlement ||
 		convertedLoanAmount > convertedEntitlement
 	)
-		"";
+		return "";
 
 	const entitlementUsed = convertedLoanAmount * 0.25;
 
@@ -70,7 +70,7 @@ function calculateDownPayment(
 
 	if (downPayment <= 0) return "0";
 
-	return downPayment.toString();
+	return Math.round(downPayment).toString();
 }
 
 function calculateMaxLoanNoDown(availableEntitlement: string | null): string {
