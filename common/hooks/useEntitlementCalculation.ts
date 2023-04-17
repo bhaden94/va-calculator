@@ -1,4 +1,4 @@
-import { useEntitlementDataInput } from "./EntitlementDataContext";
+import { useEntitlementDataInput } from "./useEntitlementDataInput";
 import { useEffect, useState } from "react";
 
 interface EntitlementCalculations {

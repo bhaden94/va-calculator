@@ -2,7 +2,7 @@ import { Box, Button, Paper } from "@mui/material";
 import React, { FC, useState } from "react";
 import Typography from "@mui/material/Typography";
 import { useEntitlementCalculations } from "../../hooks/useEntitlementCalculation";
-import { useEntitlementDataInput } from "../../hooks/EntitlementDataContext";
+import { useEntitlementDataInput } from "../../hooks/useEntitlementDataInput";
 
 const UP_HEIGHT = 175;
 const DOWN_HEIGHT = 575;

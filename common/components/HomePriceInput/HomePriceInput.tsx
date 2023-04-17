@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { InputFormField } from "./InputFormFields";
 import { InputLabel } from "../../types/InputLabel";
-import { useEntitlementDataInput } from "../../hooks/EntitlementDataContext";
+import { useEntitlementDataInput } from "../../hooks/useEntitlementDataInput";
 
 export const HomePriceInput: FC = () => {
 	const { originalLoanAmountState, newHomePriceState } =

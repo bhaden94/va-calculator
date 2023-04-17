@@ -1,4 +1,4 @@
-import { EntitlementDataProvider } from "../common/hooks/EntitlementDataContext";
+import { EntitlementDataProvider } from "../common/context/EntitlementDataContext";
 import { EntitlementDataRow } from "../common/types/EntitlementModel";
 import Head from "next/head";
 import { HomePriceInput } from "../common/components/HomePriceInput/HomePriceInput";

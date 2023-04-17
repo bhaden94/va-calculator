@@ -1,24 +1,7 @@
 import { EntitlementDataRow } from "../types/EntitlementModel";
-import { createContext, useContext, useState } from "react";
+import { EntitlementDataContextValue } from "../types/EntitlementDataContextValue";
+import { createContext, useState } from "react";
 
-interface EntitlementDataContextValue {
-	chosenEntitlementDataState: {
-		chosenEntitlementDataRow: EntitlementDataRow | null;
-		setChosenEntitlementDataRow: React.Dispatch<
-			React.SetStateAction<EntitlementDataRow | null>
-		>;
-	};
-	originalLoanAmountState: {
-		originalLoanAmount: string | null;
-		setOriginalLoanAmount: React.Dispatch<
-			React.SetStateAction<string | null>
-		>;
-	};
-	newHomePriceState: {
-		newHomePrice: string | null;
-		setNewHomePrice: React.Dispatch<React.SetStateAction<string | null>>;
-	};
-}
 type EntitlementDataProviderProps = { children: React.ReactNode };
 
 const EntitlementDataContext = createContext<
@@ -55,14 +38,4 @@ function EntitlementDataProvider({ children }: EntitlementDataProviderProps) {
 	);
 }
 
-function useEntitlementDataInput(): EntitlementDataContextValue {
-	const context = useContext(EntitlementDataContext);
-	if (context === undefined) {
-		throw new Error(
-			"useEntitlementData must be used within an EntitlementDataProvider"
-		);
-	}
-	return context;
-}
-
-export { EntitlementDataProvider, useEntitlementDataInput };
+export { EntitlementDataProvider, EntitlementDataContext };

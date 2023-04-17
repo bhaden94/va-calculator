@@ -5,7 +5,7 @@ import React from "react";
 import { ListboxComponent } from "./ListboxComponent";
 import { StyledPopper } from "./StyledPopper";
 import { filterOptions } from "../../utils/locationAutocompleteUtils";
-import { useEntitlementDataInput } from "../../hooks/EntitlementDataContext";
+import { useEntitlementDataInput } from "../../hooks/useEntitlementDataInput";
 
 interface ILocationAutocompleteProps {
 	entitlementData: EntitlementDataRow[];
