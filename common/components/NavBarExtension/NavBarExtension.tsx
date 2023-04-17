@@ -7,6 +7,7 @@ import { useEntitlementDataInput } from "../../hooks/useEntitlementDataInput";
 const UP_HEIGHT = 175;
 const DOWN_HEIGHT = 575;
 
+// TODO: clean up this component
 export const NavBarExtension: FC = () => {
 	const [height, setHeight] = useState<number>(UP_HEIGHT);
 	const { chosenEntitlementDataState } = useEntitlementDataInput();
