@@ -36,7 +36,17 @@ export function renderRow(props: ListChildComponentProps) {
 	}
 
 	return (
-		<Typography component="li" {...dataSet[0]} noWrap style={inlineStyle}>
+		<Typography
+			component="li"
+			{...dataSet[0]}
+			noWrap
+			style={{
+				...inlineStyle,
+				whiteSpace: "unset",
+				wordBreak: "normal",
+				overflowWrap: "anywhere",
+			}}
+		>
 			{`${dataSet[1].zipCode}, ${dataSet[1].county}, ${dataSet[1].state}`}
 		</Typography>
 	);
