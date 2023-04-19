@@ -91,5 +91,13 @@ export const theme: Theme = createTheme({
 				},
 			},
 		},
+		MuiTooltip: {
+			styleOverrides: {
+				tooltip: {
+					background: `url('./${GOLD_GRADIENT_NAME}') no-repeat center center`,
+					color: "#000",
+				},
+			},
+		},
 	},
 });

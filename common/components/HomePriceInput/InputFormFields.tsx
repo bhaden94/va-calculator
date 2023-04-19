@@ -5,14 +5,17 @@ import {
 	OutlinedInput,
 } from "@mui/material";
 import { FC, useEffect, useRef, useState } from "react";
+import { InformationPopup } from "./InformationPopup";
 
 interface IInputFormFieldProps {
 	inputLabel: string;
+	informationBubbleTitle: string;
 	stateSetter: React.Dispatch<React.SetStateAction<string | null>>;
 }
 
 export const InputFormField: FC<IInputFormFieldProps> = ({
 	inputLabel,
+	informationBubbleTitle,
 	stateSetter,
 }) => {
 	const [value, setValue] = useState<string>("");
@@ -64,6 +67,11 @@ export const InputFormField: FC<IInputFormFieldProps> = ({
 				inputProps={{ maxLength: 9 }}
 				startAdornment={
 					<InputAdornment position="start">$</InputAdornment>
+				}
+				endAdornment={
+					<InputAdornment position="end">
+						<InformationPopup title={informationBubbleTitle} />
+					</InputAdornment>
 				}
 			/>
 		</FormControl>
