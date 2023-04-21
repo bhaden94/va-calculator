@@ -85,10 +85,12 @@ export const NavBarExtension: FC = () => {
 						<MoreDetailsRow
 							title="Entitlement used"
 							amount={entitlementUsed}
+							informationBubbleTitle="Show entitlement used calculation"
 						/>
 						<MoreDetailsRow
 							title="Available entitlement"
 							amount={availableEntitlement}
+							informationBubbleTitle="Show available entitlement calculation"
 						/>
 						<MoreDetailsRow
 							title="Max loan with 0% down"

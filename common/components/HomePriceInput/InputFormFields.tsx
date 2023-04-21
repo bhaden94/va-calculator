@@ -5,7 +5,7 @@ import {
 	OutlinedInput,
 } from "@mui/material";
 import { FC, useEffect, useRef, useState } from "react";
-import { InformationPopup } from "./InformationPopup";
+import { InformationPopup } from "../SharedComponents/InformationPopup";
 
 interface IInputFormFieldProps {
 	inputLabel: string;
