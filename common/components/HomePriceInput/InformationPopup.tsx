@@ -18,19 +18,14 @@ export const InformationPopup: FC<IInformationPopupProps> = ({ title }) => {
 	};
 
 	return (
-		<div>
-			<Tooltip
-				title={title}
-				open={open}
-				onClose={handleClose}
-				placement="top-start"
-				leaveTouchDelay={5000}
-			>
-				<InfoOutlinedIcon
-					sx={{ cursor: "pointer" }}
-					onClick={toggleOpen}
-				/>
-			</Tooltip>
-		</div>
+		<Tooltip
+			title={title}
+			open={open}
+			onClose={handleClose}
+			placement="top-start"
+			leaveTouchDelay={5000}
+		>
+			<InfoOutlinedIcon sx={{ cursor: "pointer" }} onClick={toggleOpen} />
+		</Tooltip>
 	);
 };

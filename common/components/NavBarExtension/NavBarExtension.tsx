@@ -1,6 +1,8 @@
-import { Box, Button, Paper } from "@mui/material";
+import { Button, Paper } from "@mui/material";
 import React, { FC, useState } from "react";
+import { MoreDetailsRow } from "./MoreDetailsRow";
 import Typography from "@mui/material/Typography";
+import { formatNumberOrReturnDefault } from "../../utils/formatNumberOrReturnDefault";
 import { useEntitlementCalculations } from "../../hooks/useEntitlementCalculation";
 import { useEntitlementDataInput } from "../../hooks/useEntitlementDataInput";
 
@@ -42,19 +44,6 @@ export const NavBarExtension: FC = () => {
 		height: "400px",
 		padding: "85px 5%",
 	};
-	const row: React.CSSProperties = {
-		display: "flex",
-		justifyContent: "space-between",
-		margin: "25px 0",
-	};
-	const leftColumn: React.CSSProperties = {
-		textAlign: "left",
-		flexDirection: "column",
-	};
-	const rightColumn: React.CSSProperties = {
-		textAlign: "right",
-		flexDirection: "column",
-	};
 
 	// the -22 comes from half the height of the Large contained button from MUI
 	const seeDetailsButtonOffset = paperStyle.height
@@ -72,15 +61,6 @@ export const NavBarExtension: FC = () => {
 		else setHeight(UP_HEIGHT);
 	};
 
-	const formatNumberOrReturnDefault = (
-		number: string | undefined | null
-	): string => {
-		const convertedNumber = Number(number);
-		if (!number) return "-";
-		if (!convertedNumber) return "0";
-		return Math.round(convertedNumber).toLocaleString();
-	};
-
 	return (
 		<Paper style={paperStyle} elevation={4}>
 			<div style={divStyle}>
@@ -95,54 +75,25 @@ export const NavBarExtension: FC = () => {
 					}}
 				>
 					<div style={collapsableInner}>
-						<Box style={row}>
-							<Box style={leftColumn}>
-								<Typography>County limit</Typography>
-							</Box>
-							<Box style={rightColumn}>
-								<Typography>
-									{formatNumberOrReturnDefault(
-										chosenEntitlementDataState
-											.chosenEntitlementDataRow
-											?.entitlement
-									)}
-								</Typography>
-							</Box>
-						</Box>
-						<Box style={row}>
-							<Box style={leftColumn}>
-								<Typography>Entitlement used</Typography>
-							</Box>
-							<Box style={rightColumn}>
-								<Typography>
-									{formatNumberOrReturnDefault(
-										entitlementUsed
-									)}
-								</Typography>
-							</Box>
-						</Box>
-						<Box style={row}>
-							<Box style={leftColumn}>
-								<Typography>Available entitlement</Typography>
-							</Box>
-							<Box style={rightColumn}>
-								<Typography>
-									{formatNumberOrReturnDefault(
-										availableEntitlement
-									)}
-								</Typography>
-							</Box>
-						</Box>
-						<Box style={row}>
-							<Box style={leftColumn}>
-								<Typography>Max loan with 0% down</Typography>
-							</Box>
-							<Box style={rightColumn}>
-								<Typography>
-									{formatNumberOrReturnDefault(maxLoanNoDown)}
-								</Typography>
-							</Box>
-						</Box>
+						<MoreDetailsRow
+							title="County limit"
+							amount={
+								chosenEntitlementDataState
+									.chosenEntitlementDataRow?.entitlement
+							}
+						/>
+						<MoreDetailsRow
+							title="Entitlement used"
+							amount={entitlementUsed}
+						/>
+						<MoreDetailsRow
+							title="Available entitlement"
+							amount={availableEntitlement}
+						/>
+						<MoreDetailsRow
+							title="Max loan with 0% down"
+							amount={maxLoanNoDown}
+						/>
 					</div>
 				</div>
 			</div>
