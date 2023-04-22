@@ -13,7 +13,7 @@ const ENTITLEMENT_USED_POPUP_TEXT =
 const AVAILABLE_ENTITLEMENT_POPUP_TEXT =
 	"Your available entitlement is calculated by subtracting your used entitlement from the total entitlement available in your county.";
 
-// TODO: clean up this component
+// TODO: clean up this component by making a styled component.
 export const NavBarExtension: FC = () => {
 	const [height, setHeight] = useState<number>(UP_HEIGHT);
 	const { chosenEntitlementDataState } = useEntitlementDataInput();
