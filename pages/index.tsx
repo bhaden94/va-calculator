@@ -16,6 +16,7 @@ interface EntitlementDataProps {
 	nonOptimizedData: EntitlementDataRow[];
 }
 
+// TODO: Move all strings to a resources file and add CSpell to spell check them.
 const EntitlementData = ({ nonOptimizedData }: EntitlementDataProps) => {
 	const appBarHeight = useAppBarHeight();
 
