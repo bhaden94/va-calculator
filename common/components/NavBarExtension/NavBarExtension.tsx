@@ -8,6 +8,10 @@ import { useEntitlementDataInput } from "../../hooks/useEntitlementDataInput";
 
 const UP_HEIGHT = 175;
 const DOWN_HEIGHT = 575;
+const ENTITLEMENT_USED_POPUP_TEXT =
+	"Your used entitlement is calculated by taking 25% of the original loan amount.";
+const AVAILABLE_ENTITLEMENT_POPUP_TEXT =
+	"Your available entitlement is calculated by subtracting your used entitlement from the total entitlement available in your county.";
 
 // TODO: clean up this component
 export const NavBarExtension: FC = () => {
@@ -86,12 +90,14 @@ export const NavBarExtension: FC = () => {
 						<MoreDetailsRow
 							title="Entitlement used"
 							amount={entitlementUsed}
-							informationBubbleTitle="Show entitlement used calculation"
+							informationBubbleTitle={ENTITLEMENT_USED_POPUP_TEXT}
 						/>
 						<MoreDetailsRow
 							title="Available entitlement"
 							amount={availableEntitlement}
-							informationBubbleTitle="Show available entitlement calculation"
+							informationBubbleTitle={
+								AVAILABLE_ENTITLEMENT_POPUP_TEXT
+							}
 						/>
 						<MoreDetailsRow
 							title="Max loan with 0% down"

@@ -42,7 +42,7 @@ export const MoreDetailsRow: FC<IMoreDetailsRowProps> = ({
 				</Typography>
 			</Box>
 			<Box style={rightColumn}>
-				<Typography>{formatNumberOrReturnDefault(amount)}</Typography>
+				<Typography>${formatNumberOrReturnDefault(amount)}</Typography>
 			</Box>
 		</Box>
 	);
