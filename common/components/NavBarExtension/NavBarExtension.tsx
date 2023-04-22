@@ -65,7 +65,6 @@ export const NavBarExtension: FC = () => {
 		else setHeight(UP_HEIGHT);
 	};
 
-	// TODO: fill in popup title with valuable information.
 	return (
 		<Paper style={paperStyle} elevation={4}>
 			<div style={divStyle}>
