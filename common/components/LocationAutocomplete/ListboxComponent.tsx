@@ -1,10 +1,10 @@
 import {
 	LISTBOX_PADDING,
-	renderRow,
 	useResetCache,
 } from "../../utils/locationAutocompleteUtils";
 import { createContext, forwardRef, useContext } from "react";
 import { useMediaQuery, useTheme } from "@mui/material";
+import { ListRowComponent } from "./ListRowComponent";
 import { VariableSizeList } from "react-window";
 
 const OuterElementContext = createContext({});
@@ -66,7 +66,7 @@ export const ListboxComponent = forwardRef<
 					overscanCount={5}
 					itemCount={itemCount}
 				>
-					{renderRow}
+					{ListRowComponent}
 				</VariableSizeList>
 			</OuterElementContext.Provider>
 		</div>
