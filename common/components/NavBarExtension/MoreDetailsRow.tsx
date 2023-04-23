@@ -1,8 +1,8 @@
 import { Box, Typography } from "@mui/material";
+import { leftColumn, rightColumn, row } from "./NavBarExtensionStyles";
 import { FC } from "react";
-import { formatNumberOrReturnDefault } from "../../utils/formatNumberOrReturnDefault";
 import { InformationPopup } from "../SharedComponents/InformationPopup";
-import { row, leftColumn, rightColumn } from "./NavBarExtensionStyles";
+import { formatNumberOrReturnDefault } from "../../utils/formatNumberOrReturnDefault";
 
 interface IMoreDetailsRowProps {
 	title: string;

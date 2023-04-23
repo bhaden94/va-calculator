@@ -1,10 +1,10 @@
+import { ListChildComponentProps, VariableSizeList } from "react-window";
 import {
 	ListSubheader,
 	Typography,
 	createFilterOptions,
 	useTheme,
 } from "@mui/material";
-import { ListChildComponentProps, VariableSizeList } from "react-window";
 import { useEffect, useRef } from "react";
 import { EntitlementDataRow } from "../types/EntitlementModel";
 

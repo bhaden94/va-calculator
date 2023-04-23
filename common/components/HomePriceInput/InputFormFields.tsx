@@ -1,10 +1,10 @@
+import { FC, useEffect, useRef, useState } from "react";
 import {
 	FormControl,
 	InputAdornment,
 	InputLabel,
 	OutlinedInput,
 } from "@mui/material";
-import { FC, useEffect, useRef, useState } from "react";
 import { InformationPopup } from "../SharedComponents/InformationPopup";
 
 interface IInputFormFieldProps {

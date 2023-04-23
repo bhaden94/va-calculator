@@ -1,14 +1,16 @@
 import { FC, useState } from "react";
-import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import { SvgIconPropsSizeOverrides, Tooltip } from "@mui/material";
+import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import { OverridableStringUnion } from "@mui/types";
 
 interface IInformationPopupProps {
 	title: string;
-	iconFontSize?: OverridableStringUnion<
-		"inherit" | "large" | "medium" | "small" | "x-small",
-		SvgIconPropsSizeOverrides
-	> | string;
+	iconFontSize?:
+		| OverridableStringUnion<
+				"inherit" | "large" | "medium" | "small" | "x-small",
+				SvgIconPropsSizeOverrides
+		  >
+		| string;
 }
 
 export const InformationPopup: FC<IInformationPopupProps> = ({

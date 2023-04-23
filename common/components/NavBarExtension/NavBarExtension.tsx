@@ -1,11 +1,11 @@
 import { Button, Paper } from "@mui/material";
 import React, { FC, useState } from "react";
 import {
-	paperStyle,
-	divStyle,
+	buttonDiv,
 	collapsableContent,
 	collapsableInner,
-	buttonDiv,
+	divStyle,
+	paperStyle,
 } from "./NavBarExtensionStyles";
 import { MoreDetailsRow } from "./MoreDetailsRow";
 import Typography from "@mui/material/Typography";

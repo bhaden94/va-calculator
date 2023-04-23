@@ -1,6 +1,6 @@
-import { EntitlementDataRow } from "../types/EntitlementModel";
-import { EntitlementDataContextValue } from "../types/EntitlementDataContextValue";
 import { createContext, useState } from "react";
+import { EntitlementDataContextValue } from "../types/EntitlementDataContextValue";
+import { EntitlementDataRow } from "../types/EntitlementModel";
 
 type EntitlementDataProviderProps = { children: React.ReactNode };
 

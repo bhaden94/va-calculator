@@ -1,5 +1,5 @@
-import { useEntitlementDataInput } from "./useEntitlementDataInput";
 import { useEffect, useState } from "react";
+import { useEntitlementDataInput } from "./useEntitlementDataInput";
 
 interface EntitlementCalculations {
 	entitlementUsed: string | null;
