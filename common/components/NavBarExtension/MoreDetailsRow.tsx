@@ -10,7 +10,6 @@ interface IMoreDetailsRowProps {
 	informationBubbleTitle?: string;
 }
 
-// TODO: make into a styled component
 export const MoreDetailsRow: FC<IMoreDetailsRowProps> = ({
 	title,
 	amount,
