@@ -11,7 +11,7 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
-import { TextLogo } from "../TextLogo/TextLogo";
+import { TextLogo } from "../SharedComponents/TextLogo";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 
