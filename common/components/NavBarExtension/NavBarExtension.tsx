@@ -8,6 +8,7 @@ import {
 	paperStyle,
 } from "./NavBarExtensionStyles";
 import { MoreDetailsRow } from "./MoreDetailsRow";
+import { NavBarExtensionConstants } from "../EntitlementCalcConstants";
 import Typography from "@mui/material/Typography";
 import { formatNumberOrReturnDefault } from "../../utils/formatNumberOrReturnDefault";
 import { useEntitlementCalculations } from "../../hooks/useEntitlementCalculation";
@@ -15,10 +16,6 @@ import { useEntitlementDataInput } from "../../hooks/useEntitlementDataInput";
 
 const UP_HEIGHT = 175;
 const DOWN_HEIGHT = 575;
-const ENTITLEMENT_USED_POPUP_TEXT =
-	"Your used entitlement is calculated by taking 25% of the original loan amount.";
-const AVAILABLE_ENTITLEMENT_POPUP_TEXT =
-	"Your available entitlement is calculated by subtracting your used entitlement from the total entitlement available in your county.";
 
 export const NavBarExtension: FC = () => {
 	const [height, setHeight] = useState<number>(UP_HEIGHT);
@@ -53,26 +50,34 @@ export const NavBarExtension: FC = () => {
 				>
 					<div style={collapsableInner}>
 						<MoreDetailsRow
-							title="County limit"
+							title={
+								NavBarExtensionConstants.countyLimitTitleText
+							}
 							amount={
 								chosenEntitlementDataState
 									.chosenEntitlementDataRow?.entitlement
 							}
 						/>
 						<MoreDetailsRow
-							title="Entitlement used"
+							title={
+								NavBarExtensionConstants.entitlementUsedTitleText
+							}
 							amount={entitlementUsed}
-							informationBubbleTitle={ENTITLEMENT_USED_POPUP_TEXT}
-						/>
-						<MoreDetailsRow
-							title="Available entitlement"
-							amount={availableEntitlement}
 							informationBubbleTitle={
-								AVAILABLE_ENTITLEMENT_POPUP_TEXT
+								NavBarExtensionConstants.entitlementUsedInformationBubbleText
 							}
 						/>
 						<MoreDetailsRow
-							title="Max loan with 0% down"
+							title={
+								NavBarExtensionConstants.availableEntitlementTitleText
+							}
+							amount={availableEntitlement}
+							informationBubbleTitle={
+								NavBarExtensionConstants.availableEntitlementInformationBubbleText
+							}
+						/>
+						<MoreDetailsRow
+							title={NavBarExtensionConstants.maxLoanTitleText}
 							amount={maxLoanNoDown}
 						/>
 					</div>
@@ -85,7 +90,9 @@ export const NavBarExtension: FC = () => {
 					size="large"
 					onClick={() => setNavBarExtension()}
 				>
-					{height === UP_HEIGHT ? "SEE DETAILS" : "HIDE DETAILS"}
+					{height === UP_HEIGHT
+						? NavBarExtensionConstants.seeDetailsButtonText
+						: NavBarExtensionConstants.hideDetailsButtonText}
 				</Button>
 			</div>
 		</Paper>
