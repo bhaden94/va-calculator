@@ -2,6 +2,7 @@ import { Autocomplete, TextField } from "@mui/material";
 import { EntitlementDataRow } from "../../../common/types/EntitlementModel";
 import { FC } from "react";
 import { ListboxComponent } from "./ListboxComponent";
+import { LocationAutocompleteConstants } from "../EntitlementCalcConstants";
 import React from "react";
 import { StyledPopper } from "./StyledPopper";
 import { filterOptions } from "../../utils/locationAutocompleteUtils";
@@ -37,7 +38,12 @@ export const LocationAutocomplete: FC<ILocationAutocompleteProps> = ({
 					`${option.zipCode}, ${option.county}, ${option.state}`
 				}
 				renderInput={(params) => (
-					<TextField {...params} label="Zip Code, County, State" />
+					<TextField
+						{...params}
+						label={
+							LocationAutocompleteConstants.locationDropdownLabelText
+						}
+					/>
 				)}
 				renderOption={(props, option, state) =>
 					[props, option, state.index] as React.ReactNode
