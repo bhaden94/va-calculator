@@ -16,8 +16,6 @@ export const rightColumn: React.CSSProperties = {
 /** NavBarExtension */
 export const paperStyle: React.CSSProperties = {
 	width: "100%",
-	borderRadius: "0 0 35px 35px",
-	position: "absolute",
 	display: "flex",
 	flexDirection: "column",
 	alignItems: "center",

@@ -62,7 +62,7 @@ export default function NavBar() {
 							display: { xs: "none", sm: "none", md: "block" },
 						}}
 					>
-						<TextLogo showTextLogo={true} />
+						<TextLogo showTextLogo={true} height={30} width={225} />
 					</Typography>
 					<Box
 						sx={{

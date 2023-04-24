@@ -1,4 +1,4 @@
-import { Button, Paper } from "@mui/material";
+import { Box, Button, Paper } from "@mui/material";
 import React, { FC, useState } from "react";
 import {
 	buttonDiv,
@@ -16,6 +16,7 @@ import { useEntitlementDataInput } from "../../hooks/useEntitlementDataInput";
 
 const UP_HEIGHT = 175;
 const DOWN_HEIGHT = 575;
+const TABLET_DESKTOP_HEIGHT = 500;
 
 export const NavBarExtension: FC = () => {
 	const [height, setHeight] = useState<number>(UP_HEIGHT);
@@ -36,16 +37,27 @@ export const NavBarExtension: FC = () => {
 	};
 
 	return (
-		<Paper style={{ ...paperStyle, height: height }} elevation={4}>
+		<Paper
+			sx={{
+				...paperStyle,
+				height: { xs: height, sm: TABLET_DESKTOP_HEIGHT },
+				position: { xs: "absolute", sm: "relative" },
+				borderRadius: { xs: "0 0 35px 35px", sm: "8px" },
+			}}
+			elevation={4}
+		>
 			<div style={divStyle}>
 				<Typography>Required Down Payment</Typography>
 				<Typography fontSize="3.1rem" fontWeight="bold">
 					${formatNumberOrReturnDefault(downPayment)}
 				</Typography>
-				<div
-					style={{
+				<Box
+					sx={{
 						...collapsableContent,
-						maxHeight: height === UP_HEIGHT ? 0 : 400,
+						maxHeight: {
+							xs: height === UP_HEIGHT ? 0 : 400,
+							sm: 300,
+						},
 					}}
 				>
 					<div style={collapsableInner}>
@@ -81,9 +93,15 @@ export const NavBarExtension: FC = () => {
 							amount={maxLoanNoDown}
 						/>
 					</div>
-				</div>
+				</Box>
 			</div>
-			<div style={{ ...buttonDiv, top: `${seeDetailsButtonOffset}px` }}>
+			<Box
+				sx={{
+					...buttonDiv,
+					top: `${seeDetailsButtonOffset}px`,
+					display: { sm: "none" },
+				}}
+			>
 				<Button
 					variant="contained"
 					color="primary"
@@ -94,7 +112,7 @@ export const NavBarExtension: FC = () => {
 						? NavBarExtensionConstants.seeDetailsButtonText
 						: NavBarExtensionConstants.hideDetailsButtonText}
 				</Button>
-			</div>
+			</Box>
 		</Paper>
 	);
 };

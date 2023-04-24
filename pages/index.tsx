@@ -1,3 +1,4 @@
+import { Box, ThemeProvider, Typography } from "@mui/material";
 import { EntitlementDataProvider } from "../common/context/EntitlementDataContext";
 import { EntitlementDataRow } from "../common/types/EntitlementModel";
 import Head from "next/head";
@@ -7,11 +8,11 @@ import NavBar from "../common/components/NavBar/NavBar";
 import { NavBarExtension } from "../common/components/NavBarExtension/NavBarExtension";
 import React from "react";
 import { SecondTierEntitlementWebpageText } from "../common/components/EntitlementCalcConstants";
-import { ThemeProvider } from "@mui/material";
 import { getNonOptimizedData } from "../common/utils/localData";
 import styles from "../styles/Home.module.css";
 import { theme } from "../common/utils/theme";
 import useAppBarHeight from "../common/hooks/useAppBarHeight";
+import { PageInformation } from "../common/components/PageInformation/PageInformation";
 
 interface EntitlementDataProps {
 	nonOptimizedData: EntitlementDataRow[];
@@ -27,15 +28,67 @@ const EntitlementData = ({ nonOptimizedData }: EntitlementDataProps) => {
 			</Head>
 			<ThemeProvider theme={theme}>
 				<NavBar />
-				<main style={{ marginTop: appBarHeight }}>
+				<main
+					style={{
+						paddingTop: appBarHeight,
+						height: "100vh",
+						display: "flex",
+						justifyContent: "center",
+					}}
+				>
 					<EntitlementDataProvider>
-						<NavBarExtension />
-						<div className={styles.main}>
-							<LocationAutocomplete
-								entitlementData={nonOptimizedData}
-							/>
-							<HomePriceInput />
-						</div>
+						<Box
+							sx={{
+								display: { sm: "flex" },
+								flexDirection: { sm: "row-reverse" },
+								width: { lg: "1200px" },
+								backgroundColor: "#fff",
+								gap: "2rem",
+							}}
+						>
+							<Box
+								sx={{
+									display: { sm: "flex" },
+									flexDirection: { sm: "column" },
+									flexBasis: { sm: "100%" },
+									margin: {
+										sm: "2rem 1rem",
+										md: "3rem 2rem",
+									},
+								}}
+							>
+								<NavBarExtension />
+							</Box>
+							<Box
+								sx={{
+									display: { sm: "flex" },
+									flexBasis: { sm: "100%" },
+									flexDirection: { sm: "column" },
+									margin: {
+										sm: "2rem 1rem",
+										md: "3rem 2rem",
+									},
+								}}
+							>
+								<Box
+									sx={{
+										display: "flex",
+										flexDirection: "column",
+										alignItems: "center",
+										padding: {
+											xs: "250px 25px 0",
+											sm: "0",
+										},
+									}}
+								>
+									<PageInformation />
+									<LocationAutocomplete
+										entitlementData={nonOptimizedData}
+									/>
+									<HomePriceInput />
+								</Box>
+							</Box>
+						</Box>
 					</EntitlementDataProvider>
 				</main>
 			</ThemeProvider>
