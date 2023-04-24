@@ -24,3 +24,5 @@ export const NavBarExtensionConstants = {
 };
 
 export const SecondTierEntitlementWebpageText = "VA Calculator - Second Tier Entitlement";
+
+export const VaCalculatorLogoAlternateText = "VA Calculator logo"
