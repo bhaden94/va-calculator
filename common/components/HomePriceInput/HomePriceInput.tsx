@@ -10,7 +10,7 @@ export const HomePriceInput: FC = () => {
 	return (
 		<div style={{ width: "100%" }}>
 			<InputFormField
-				inputLabel={HomePriceInputConstants.originalLoalAmountLabelText}
+				inputLabel={HomePriceInputConstants.originalLoanAmountLabelText}
 				informationBubbleTitle={
 					HomePriceInputConstants.originalLoanInformationBubbleText
 				}
