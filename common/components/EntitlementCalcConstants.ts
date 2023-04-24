@@ -22,3 +22,5 @@ export const NavBarExtensionConstants = {
 	availableEntitlementTitleText: "Available entitlement",
 	maxLoanTitleText: "Max loan with 0% down",
 };
+
+export const SecondTierEntitlementWebpageText = "VA Calculator - Second Tier Entitlement";

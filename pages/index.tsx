@@ -6,6 +6,7 @@ import { LocationAutocomplete } from "../common/components/LocationAutocomplete/
 import NavBar from "../common/components/NavBar/NavBar";
 import { NavBarExtension } from "../common/components/NavBarExtension/NavBarExtension";
 import React from "react";
+import { SecondTierEntitlementWebpageText } from "../common/components/EntitlementCalcConstants";
 import { ThemeProvider } from "@mui/material";
 import { getNonOptimizedData } from "../common/utils/localData";
 import styles from "../styles/Home.module.css";
@@ -23,7 +24,7 @@ const EntitlementData = ({ nonOptimizedData }: EntitlementDataProps) => {
 	return (
 		<>
 			<Head>
-				<title>VA Calculator - Second Tier Entitlement</title>
+				<title>{SecondTierEntitlementWebpageText}</title>
 			</Head>
 			<ThemeProvider theme={theme}>
 				<NavBar />
