@@ -15,7 +15,6 @@ import { TextLogo } from "../SharedComponents/TextLogo";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 
-const drawerWidth = 240;
 const navItems = ["Second Tier Entitlement"];
 
 export default function NavBar() {
@@ -27,7 +26,7 @@ export default function NavBar() {
 
 	const drawer = (
 		<Box onClick={handleDrawerToggle}>
-			<TextLogo showTextLogo={true} />
+			<TextLogo showTextLogo={true} width={225} />
 			<Divider variant="middle" />
 			<List>
 				{navItems.map((item) => (
@@ -51,7 +50,7 @@ export default function NavBar() {
 						aria-label="open drawer"
 						edge="start"
 						onClick={handleDrawerToggle}
-						sx={{ mr: 2, display: { sm: "none" } }}
+						sx={{ mr: 2, display: { md: "none" } }}
 					>
 						<MenuIcon fontSize="large" sx={{ color: "#BE9E44" }} />
 					</IconButton>
@@ -60,12 +59,16 @@ export default function NavBar() {
 						component="div"
 						sx={{
 							flexGrow: 1,
-							display: { xs: "none", sm: "block" },
+							display: { xs: "none", sm: "none", md: "block" },
 						}}
 					>
 						<TextLogo showTextLogo={true} />
 					</Typography>
-					<Box sx={{ display: { xs: "none", sm: "block" } }}>
+					<Box
+						sx={{
+							display: { xs: "none", sm: "none", md: "block" },
+						}}
+					>
 						{navItems.map((item) => (
 							<Button key={item}>{item}</Button>
 						))}
@@ -81,10 +84,13 @@ export default function NavBar() {
 						keepMounted: true, // Better open performance on mobile.
 					}}
 					sx={{
-						display: { xs: "block", sm: "none" },
+						display: { xs: "block", md: "none" },
 						"& .MuiDrawer-paper": {
 							boxSizing: "border-box",
-							width: drawerWidth,
+							width: {
+								xs: "80%",
+								sm: "50%",
+							},
 						},
 					}}
 				>
