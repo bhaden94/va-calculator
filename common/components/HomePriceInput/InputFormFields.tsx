@@ -54,7 +54,7 @@ export const InputFormField: FC<IInputFormFieldProps> = ({
 	};
 
 	return (
-		<FormControl fullWidth sx={{ margin: "8px 0" }}>
+		<FormControl fullWidth sx={{ margin: "1rem 0" }}>
 			<InputLabel htmlFor={`${inputLabel}-input`}>
 				{inputLabel}
 			</InputLabel>

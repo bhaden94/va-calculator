@@ -22,7 +22,7 @@ export const LocationAutocomplete: FC<ILocationAutocompleteProps> = ({
 			<Autocomplete
 				id="location-autocomplete"
 				fullWidth
-				sx={{ margin: "8px 0" }}
+				sx={{ margin: "1rem 0" }}
 				onChange={(e: any, newValue: EntitlementDataRow | null) => {
 					chosenEntitlementDataState.setChosenEntitlementDataRow(
 						newValue

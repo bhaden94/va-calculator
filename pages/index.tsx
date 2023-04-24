@@ -9,7 +9,6 @@ import { NavBarExtension } from "../common/components/NavBarExtension/NavBarExte
 import React from "react";
 import { SecondTierEntitlementWebpageText } from "../common/components/EntitlementCalcConstants";
 import { getNonOptimizedData } from "../common/utils/localData";
-import styles from "../styles/Home.module.css";
 import { theme } from "../common/utils/theme";
 import useAppBarHeight from "../common/hooks/useAppBarHeight";
 import { PageInformation } from "../common/components/PageInformation/PageInformation";
@@ -53,7 +52,8 @@ const EntitlementData = ({ nonOptimizedData }: EntitlementDataProps) => {
 									flexBasis: { sm: "100%" },
 									margin: {
 										sm: "2rem 1rem",
-										md: "3rem 2rem",
+										md: "3rem 3rem",
+										lg: "4rem 5rem",
 									},
 								}}
 							>
@@ -66,7 +66,8 @@ const EntitlementData = ({ nonOptimizedData }: EntitlementDataProps) => {
 									flexDirection: { sm: "column" },
 									margin: {
 										sm: "2rem 1rem",
-										md: "3rem 2rem",
+										md: "3rem 3rem",
+										lg: "4rem 5rem",
 									},
 								}}
 							>
