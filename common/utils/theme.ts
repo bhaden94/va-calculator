@@ -64,9 +64,15 @@ export const theme: Theme = createTheme({
 						borderBottomColor: "#1a1a1a",
 					},
 					"& .MuiOutlinedInput-root": {
+						"& fieldset": {
+							borderRadius: "8px",
+						},
 						"&.Mui-focused fieldset": {
-							borderColor: "#1a1a1a",
-							borderWidth: 1,
+							borderLeft: "1px solid #1a1a1a",
+							borderRight: "1px solid #1a1a1a",
+							borderTop: "1px solid #1a1a1a",
+							borderBottom: "none",
+							borderRadius: "8px 8px 0 0",
 						},
 					},
 				},
@@ -84,7 +90,10 @@ export const theme: Theme = createTheme({
 		MuiOutlinedInput: {
 			styleOverrides: {
 				root: {
-					"&.Mui-focused .MuiOutlinedInput-notchedOutline ": {
+					"& .MuiOutlinedInput-notchedOutline": {
+						borderRadius: "8px",
+					},
+					"&.Mui-focused .MuiOutlinedInput-notchedOutline": {
 						borderColor: "#1a1a1a",
 						borderWidth: 1,
 					},

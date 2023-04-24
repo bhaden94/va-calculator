@@ -29,6 +29,8 @@ export const LocationAutocomplete: FC<ILocationAutocompleteProps> = ({
 					);
 				}}
 				disableListWrap
+				blurOnSelect
+				openOnFocus
 				PopperComponent={StyledPopper}
 				ListboxComponent={ListboxComponent}
 				options={entitlementData}

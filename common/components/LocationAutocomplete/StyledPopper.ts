@@ -12,6 +12,10 @@ export const StyledPopper = styled(Popper)(({ theme }) =>
 		[`& .${autocompleteClasses.paper}`]: {
 			background: theme.palette.primary.main,
 			color: theme.palette.secondary.main,
+			borderLeft: "1px solid #1a1a1a",
+			borderRight: "1px solid #1a1a1a",
+			borderBottom: "1px solid #1a1a1a",
+			borderRadius: "0 0 8px 8px"
 		},
 	})
 );
