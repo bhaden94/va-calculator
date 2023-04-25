@@ -14,8 +14,8 @@ import { formatNumberOrReturnDefault } from "../../utils/formatNumberOrReturnDef
 import { useEntitlementCalculations } from "../../hooks/useEntitlementCalculation";
 import { useEntitlementDataInput } from "../../hooks/useEntitlementDataInput";
 
-const UP_HEIGHT = 175;
-const DOWN_HEIGHT = 575;
+const UP_HEIGHT = 150;
+const DOWN_HEIGHT = 475;
 const TABLET_DESKTOP_HEIGHT = 500;
 
 export const NavBarExtension: FC = () => {
@@ -55,7 +55,7 @@ export const NavBarExtension: FC = () => {
 					sx={{
 						...collapsableContent,
 						maxHeight: {
-							xs: height === UP_HEIGHT ? 0 : 400,
+							xs: height === UP_HEIGHT ? 0 : 325,
 							sm: 300,
 						},
 					}}

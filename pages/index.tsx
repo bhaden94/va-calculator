@@ -77,7 +77,7 @@ const EntitlementData = ({ nonOptimizedData }: EntitlementDataProps) => {
 										flexDirection: "column",
 										alignItems: "center",
 										padding: {
-											xs: "250px 25px 0",
+											xs: "200px 25px 0",
 											sm: "0",
 										},
 									}}

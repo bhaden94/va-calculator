@@ -32,8 +32,8 @@ export const collapsableContent: React.CSSProperties = {
 	transition: "max-height .4s ease",
 };
 export const collapsableInner: React.CSSProperties = {
-	height: "400px",
-	padding: "85px 5%",
+	height: "325px",
+	padding: "35px 5%",
 };
 export const buttonDiv: React.CSSProperties = {
 	position: "absolute",
