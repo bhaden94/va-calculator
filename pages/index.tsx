@@ -6,12 +6,12 @@ import { HomePriceInput } from "../common/components/HomePriceInput/HomePriceInp
 import { LocationAutocomplete } from "../common/components/LocationAutocomplete/LocationAutocomplete";
 import NavBar from "../common/components/NavBar/NavBar";
 import { NavBarExtension } from "../common/components/NavBarExtension/NavBarExtension";
+import { PageInformation } from "../common/components/PageInformation/PageInformation";
 import React from "react";
 import { SecondTierEntitlementWebpageText } from "../common/components/EntitlementCalcConstants";
 import { getNonOptimizedData } from "../common/utils/localData";
 import { theme } from "../common/utils/theme";
 import useAppBarHeight from "../common/hooks/useAppBarHeight";
-import { PageInformation } from "../common/components/PageInformation/PageInformation";
 
 interface EntitlementDataProps {
 	nonOptimizedData: EntitlementDataRow[];
