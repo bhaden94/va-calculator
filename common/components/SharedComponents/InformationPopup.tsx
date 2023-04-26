@@ -1,5 +1,10 @@
 import { FC, useState } from "react";
-import { SvgIconPropsSizeOverrides, Tooltip } from "@mui/material";
+import {
+	IconButton,
+	SvgIconPropsSizeOverrides,
+	Tooltip,
+	Typography,
+} from "@mui/material";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import { OverridableStringUnion } from "@mui/types";
 
@@ -29,17 +34,18 @@ export const InformationPopup: FC<IInformationPopupProps> = ({
 
 	return (
 		<Tooltip
-			title={title}
+			title={<Typography>{title}</Typography>}
 			open={open}
 			onClose={handleClose}
 			placement="top-start"
 			leaveTouchDelay={5000}
 		>
-			<InfoOutlinedIcon
-				sx={{ cursor: "pointer", fontSize: iconFontSize }}
-				onClick={toggleOpen}
-				fontSize={iconFontSize ? "inherit" : "medium"}
-			/>
+			<IconButton onClick={toggleOpen} color="inherit">
+				<InfoOutlinedIcon
+					sx={{ fontSize: iconFontSize }}
+					fontSize={iconFontSize ? "inherit" : "medium"}
+				/>
+			</IconButton>
 		</Tooltip>
 	);
 };
