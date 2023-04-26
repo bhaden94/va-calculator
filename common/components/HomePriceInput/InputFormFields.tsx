@@ -6,6 +6,7 @@ import {
 	OutlinedInput,
 } from "@mui/material";
 import { InformationPopup } from "../SharedComponents/InformationPopup";
+import { inputMarginStyle } from "../LocationAutocomplete/LocationAutocompleteStyles";
 
 interface IInputFormFieldProps {
 	inputLabel: string;
@@ -54,7 +55,7 @@ export const InputFormField: FC<IInputFormFieldProps> = ({
 	};
 
 	return (
-		<FormControl fullWidth sx={{ margin: "1rem 0" }}>
+		<FormControl fullWidth sx={inputMarginStyle}>
 			<InputLabel htmlFor={`${inputLabel}-input`}>
 				{inputLabel}
 			</InputLabel>

@@ -1,3 +1,6 @@
+import { SxProps } from "@mui/material";
+import { Theme } from "@emotion/react";
+
 /** MoreDetailsRow */
 export const row: React.CSSProperties = {
 	display: "flex",
@@ -14,7 +17,7 @@ export const rightColumn: React.CSSProperties = {
 };
 
 /** NavBarExtension */
-export const paperStyle: React.CSSProperties = {
+export const paperStyle: SxProps<Theme> = {
 	width: "100%",
 	display: "flex",
 	flexDirection: "column",
@@ -22,6 +25,8 @@ export const paperStyle: React.CSSProperties = {
 	justifyContent: "center",
 	transition: ".4s ease",
 	zIndex: 9,
+	position: { xs: "absolute", sm: "relative" },
+	borderRadius: { xs: "0 0 35px 35px", sm: "8px" },
 };
 export const divStyle: React.CSSProperties = {
 	textAlign: "center",
@@ -35,8 +40,9 @@ export const collapsableInner: React.CSSProperties = {
 	height: "325px",
 	padding: "35px 5%",
 };
-export const buttonDiv: React.CSSProperties = {
+export const buttonDiv: SxProps<Theme> = {
 	position: "absolute",
 	textAlign: "center",
 	transition: ".4s ease",
+	display: { sm: "none" },
 };

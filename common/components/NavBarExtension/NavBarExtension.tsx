@@ -41,8 +41,6 @@ export const NavBarExtension: FC = () => {
 			sx={{
 				...paperStyle,
 				height: { xs: height, sm: TABLET_DESKTOP_HEIGHT },
-				position: { xs: "absolute", sm: "relative" },
-				borderRadius: { xs: "0 0 35px 35px", sm: "8px" },
 			}}
 			elevation={4}
 		>
@@ -99,7 +97,6 @@ export const NavBarExtension: FC = () => {
 				sx={{
 					...buttonDiv,
 					top: `${seeDetailsButtonOffset}px`,
-					display: { sm: "none" },
 				}}
 			>
 				<Button

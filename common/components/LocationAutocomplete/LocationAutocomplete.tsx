@@ -6,6 +6,7 @@ import { LocationAutocompleteConstants } from "../EntitlementCalcConstants";
 import React from "react";
 import { StyledPopper } from "./StyledPopper";
 import { filterOptions } from "../../utils/locationAutocompleteUtils";
+import { inputMarginStyle } from "./LocationAutocompleteStyles";
 import { useEntitlementDataInput } from "../../hooks/useEntitlementDataInput";
 
 interface ILocationAutocompleteProps {
@@ -22,7 +23,7 @@ export const LocationAutocomplete: FC<ILocationAutocompleteProps> = ({
 			<Autocomplete
 				id="location-autocomplete"
 				fullWidth
-				sx={{ margin: "1rem 0" }}
+				sx={inputMarginStyle}
 				onChange={(e: any, newValue: EntitlementDataRow | null) => {
 					chosenEntitlementDataState.setChosenEntitlementDataRow(
 						newValue

@@ -1,18 +1,22 @@
-import { Box, Typography } from "@mui/material";
+import { Box, SxProps, Theme, Typography } from "@mui/material";
 import { FC } from "react";
+
+const boxStyles: SxProps<Theme> = {
+	display: {
+		xs: "none",
+		sm: "block",
+	},
+	marginBottom: "50px",
+};
+
+const headerStyle: SxProps<Theme> = {
+	marginBottom: "10px",
+};
 
 export const PageInformation: FC = () => {
 	return (
-		<Box
-			sx={{
-				display: {
-					xs: "none",
-					sm: "block",
-				},
-				marginBottom: "50px",
-			}}
-		>
-			<Typography variant="h5" sx={{marginBottom: "10px"}}>
+		<Box sx={boxStyles}>
+			<Typography variant="h5" sx={headerStyle}>
 				Second Tier Entitlement Calculator
 			</Typography>
 			<Typography>

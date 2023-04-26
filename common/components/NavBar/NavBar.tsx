@@ -11,11 +11,43 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
+import { SxProps } from "@mui/material";
 import { TextLogo } from "../SharedComponents/TextLogo";
+import { Theme } from "@emotion/react";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 
 const navItems = ["Second Tier Entitlement"];
+
+const outerBoxStyle: SxProps<Theme> = {
+	display: "flex",
+};
+
+const mobileIconButtonStyle: SxProps<Theme> = {
+	mr: 2,
+	display: { md: "none" },
+	color: "#BE9E44",
+};
+
+const mobileDrawerStyle: SxProps<Theme> = {
+	display: { xs: "block", md: "none" },
+	"& .MuiDrawer-paper": {
+		boxSizing: "border-box",
+		width: {
+			xs: "80%",
+			sm: "50%",
+		},
+	},
+};
+
+const desktopIconStyle: SxProps<Theme> = {
+	flexGrow: 1,
+	display: { xs: "none", sm: "none", md: "block" },
+};
+
+const navItemsBoxStyle: SxProps<Theme> = {
+	display: { xs: "none", sm: "none", md: "block" },
+};
 
 export default function NavBar() {
 	const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -41,7 +73,7 @@ export default function NavBar() {
 	);
 
 	return (
-		<Box sx={{ display: "flex" }}>
+		<Box sx={outerBoxStyle}>
 			<CssBaseline />
 			<AppBar component="nav" elevation={0}>
 				<Toolbar>
@@ -50,25 +82,18 @@ export default function NavBar() {
 						aria-label="open drawer"
 						edge="start"
 						onClick={handleDrawerToggle}
-						sx={{ mr: 2, display: { md: "none" } }}
+						sx={mobileIconButtonStyle}
 					>
-						<MenuIcon fontSize="large" sx={{ color: "#BE9E44" }} />
+						<MenuIcon fontSize="large" />
 					</IconButton>
 					<Typography
 						variant="h6"
 						component="div"
-						sx={{
-							flexGrow: 1,
-							display: { xs: "none", sm: "none", md: "block" },
-						}}
+						sx={desktopIconStyle}
 					>
 						<TextLogo showTextLogo={true} height={30} width={225} />
 					</Typography>
-					<Box
-						sx={{
-							display: { xs: "none", sm: "none", md: "block" },
-						}}
-					>
+					<Box sx={navItemsBoxStyle}>
 						{navItems.map((item) => (
 							<Button key={item}>{item}</Button>
 						))}
@@ -83,16 +108,7 @@ export default function NavBar() {
 					ModalProps={{
 						keepMounted: true, // Better open performance on mobile.
 					}}
-					sx={{
-						display: { xs: "block", md: "none" },
-						"& .MuiDrawer-paper": {
-							boxSizing: "border-box",
-							width: {
-								xs: "80%",
-								sm: "50%",
-							},
-						},
-					}}
+					sx={mobileDrawerStyle}
 				>
 					{drawer}
 				</Drawer>
