@@ -12,7 +12,7 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
 import { SxProps } from "@mui/material";
-import { TextLogo } from "../SharedComponents/TextLogo";
+import { CompanyLogo } from "../SharedComponents/CompanyLogo";
 import { Theme } from "@emotion/react";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
@@ -27,6 +27,15 @@ const mobileIconButtonStyle: SxProps<Theme> = {
 	mr: 2,
 	display: { md: "none" },
 	color: "#BE9E44",
+};
+
+const mobileLogoStyle: SxProps<Theme> = {
+	mr: 2,
+	display: { md: "none" },
+	position: "absolute",
+	left: "50%",
+	top: "50%",
+	transform: "translate(-50%, -50%)",
 };
 
 const mobileDrawerStyle: SxProps<Theme> = {
@@ -58,7 +67,7 @@ export default function NavBar() {
 
 	const drawer = (
 		<Box onClick={handleDrawerToggle}>
-			<TextLogo showTextLogo={true} width={225} />
+			<CompanyLogo showTextLogo={true} width={225} />
 			<Divider variant="middle" />
 			<List>
 				{navItems.map((item) => (
@@ -89,9 +98,20 @@ export default function NavBar() {
 					<Typography
 						variant="h6"
 						component="div"
+						sx={mobileLogoStyle}
+					>
+						<CompanyLogo showTextLogo={false} height={35} />
+					</Typography>
+					<Typography
+						variant="h6"
+						component="div"
 						sx={desktopIconStyle}
 					>
-						<TextLogo showTextLogo={true} height={30} width={225} />
+						<CompanyLogo
+							showTextLogo={true}
+							height={30}
+							width={225}
+						/>
 					</Typography>
 					<Box sx={navItemsBoxStyle}>
 						{navItems.map((item) => (

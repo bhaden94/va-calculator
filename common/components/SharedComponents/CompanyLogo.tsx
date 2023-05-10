@@ -2,13 +2,13 @@ import { FC } from "react";
 import Image from "next/image";
 import { VaCalculatorLogoAlternateText } from "../EntitlementCalcConstants";
 
-interface ITextLogoProps {
+interface ICompanyLogoProps {
 	showTextLogo: boolean;
 	width?: number;
 	height?: number;
 }
 
-export const TextLogo: FC<ITextLogoProps> = ({
+export const CompanyLogo: FC<ICompanyLogoProps> = ({
 	showTextLogo,
 	width,
 	height,
