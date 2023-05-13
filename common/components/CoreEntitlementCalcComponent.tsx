@@ -9,13 +9,17 @@ import { PageInformation } from "./PageInformation/PageInformation";
 
 interface ICoreEntitlementCalcComponentProps {
 	entitlementData: EntitlementDataRow[];
+	children: React.ReactNode;
 }
+
+const sharedStyles: SxProps<Theme> = {
+	width: { lg: "1200px" },
+	backgroundColor: "#fff",
+};
 
 const outerBoxRow: SxProps<Theme> = {
 	display: { sm: "flex" },
 	flexDirection: { sm: "row-reverse" },
-	width: { lg: "1200px" },
-	backgroundColor: "#fff",
 	gap: "2rem",
 };
 
@@ -42,23 +46,26 @@ const inputsBox: SxProps<Theme> = {
 
 export const CoreEntitlementCalcComponent: FC<
 	ICoreEntitlementCalcComponentProps
-> = ({ entitlementData }) => {
+> = ({ entitlementData, children }) => {
 	return (
-		<EntitlementDataProvider>
-			<Box sx={outerBoxRow}>
-				<Box sx={innerBoxColumn}>
-					<NavBarExtension />
-				</Box>
-				<Box sx={innerBoxColumn}>
-					<Box sx={inputsBox}>
-						<PageInformation />
-						<LocationAutocomplete
-							entitlementData={entitlementData}
-						/>
-						<HomePriceInput />
+		<>
+			<EntitlementDataProvider>
+				<Box sx={{ ...outerBoxRow, ...sharedStyles }}>
+					<Box sx={innerBoxColumn}>
+						<NavBarExtension />
+					</Box>
+					<Box sx={innerBoxColumn}>
+						<Box sx={inputsBox}>
+							<PageInformation />
+							<LocationAutocomplete
+								entitlementData={entitlementData}
+							/>
+							<HomePriceInput />
+						</Box>
 					</Box>
 				</Box>
-			</Box>
-		</EntitlementDataProvider>
+			</EntitlementDataProvider>
+			<Box sx={sharedStyles}>{children}</Box>
+		</>
 	);
 };

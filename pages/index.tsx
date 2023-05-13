@@ -1,3 +1,4 @@
+import { BlogPost, BlogType } from "../common/components/SharedComponents/BlogPost";
 import { CoreEntitlementCalcComponent } from "../common/components/CoreEntitlementCalcComponent";
 import { EntitlementDataRow } from "../common/types/EntitlementModel";
 import Head from "next/head";
@@ -26,14 +27,17 @@ const EntitlementData = ({ nonOptimizedData }: EntitlementDataProps) => {
 				<main
 					style={{
 						paddingTop: appBarHeight,
-						height: "100vh",
 						display: "flex",
 						justifyContent: "center",
+						alignItems: "center",
+						flexDirection: "column",
 					}}
 				>
 					<CoreEntitlementCalcComponent
 						entitlementData={nonOptimizedData}
-					/>
+					>
+						<BlogPost blogType={BlogType.SecondTierEntitlement} />
+					</CoreEntitlementCalcComponent>
 				</main>
 			</ThemeProvider>
 		</>
