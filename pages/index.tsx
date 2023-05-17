@@ -1,4 +1,7 @@
-import { BlogPost, BlogType } from "../common/components/SharedComponents/BlogPost";
+import {
+	BlogPost,
+	BlogType,
+} from "../common/components/SharedComponents/BlogPost";
 import { CoreEntitlementCalcComponent } from "../common/components/CoreEntitlementCalcComponent";
 import { EntitlementDataRow } from "../common/types/EntitlementModel";
 import Head from "next/head";
@@ -21,6 +24,11 @@ const EntitlementData = ({ nonOptimizedData }: EntitlementDataProps) => {
 		<>
 			<Head>
 				<title>{SecondTierEntitlementWebpageText}</title>
+				<meta
+					name="description"
+					content="The second tier entitlement calculator is used if you already have a VA loan
+					and your used entitlement will not be restored prior to closing on your new home."
+				/>
 			</Head>
 			<ThemeProvider theme={theme}>
 				<NavBar />

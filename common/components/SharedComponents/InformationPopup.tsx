@@ -40,7 +40,11 @@ export const InformationPopup: FC<IInformationPopupProps> = ({
 			placement="top-start"
 			leaveTouchDelay={5000}
 		>
-			<IconButton onClick={toggleOpen} color="inherit">
+			<IconButton
+				onClick={toggleOpen}
+				color="inherit"
+				aria-label="Information bubble"
+			>
 				<InfoOutlinedIcon
 					sx={{ fontSize: iconFontSize }}
 					fontSize={iconFontSize ? "inherit" : "medium"}
