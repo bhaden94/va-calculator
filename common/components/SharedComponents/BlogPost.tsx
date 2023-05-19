@@ -1,18 +1,11 @@
-import { Box, CircularProgress, SxProps, Theme } from "@mui/material";
-import { FC, useEffect, useState } from "react";
-import SecondTierEntitlementPost from "../../blog-posts/SecondTierEntitlementPost.mdx";
-
-export enum BlogType {
-	SecondTierEntitlement = "SecondTierEntitlement",
-}
+import { Box, SxProps, Theme } from "@mui/material";
+import { FC } from "react";
 
 interface IBlogPostProps {
-	blogType: BlogType;
+	children: React.ReactNode; // Blog posts will come from the blog-posts directory
 }
 
-export const BlogPost: FC<IBlogPostProps> = ({ blogType }) => {
-	const [blogNode, setBlogNode] = useState<React.ReactNode>();
-
+export const BlogPost: FC<IBlogPostProps> = ({ children }) => {
 	const blogStyles: SxProps<Theme> = {
 		padding: {
 			xs: "50px 25px",
@@ -22,15 +15,5 @@ export const BlogPost: FC<IBlogPostProps> = ({ blogType }) => {
 		},
 	};
 
-	useEffect(() => {
-		if (blogType === BlogType.SecondTierEntitlement) {
-			setBlogNode(<SecondTierEntitlementPost />);
-		}
-	}, [blogType]);
-
-	return (
-		<Box sx={blogStyles}>
-			{blogNode || <CircularProgress disableShrink color="secondary" />}
-		</Box>
-	);
+	return <Box sx={blogStyles}>{children}</Box>;
 };
