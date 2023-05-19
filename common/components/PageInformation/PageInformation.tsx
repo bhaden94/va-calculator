@@ -11,12 +11,13 @@ const boxStyles: SxProps<Theme> = {
 
 const headerStyle: SxProps<Theme> = {
 	marginBottom: "10px",
+	fontSize: "1.5rem",
 };
 
 export const PageInformation: FC = () => {
 	return (
 		<Box sx={boxStyles}>
-			<Typography variant="h5" sx={headerStyle}>
+			<Typography variant="h1" sx={headerStyle}>
 				Second Tier Entitlement Calculator
 			</Typography>
 			<Typography>
