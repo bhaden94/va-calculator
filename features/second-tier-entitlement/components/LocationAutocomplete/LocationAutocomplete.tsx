@@ -1,8 +1,8 @@
 import { Autocomplete, TextField } from "@mui/material";
-import { EntitlementDataRow } from "../../../common/types/EntitlementModel";
+import { EntitlementDataRow } from "../../types/EntitlementModel";
 import { FC } from "react";
 import { ListboxComponent } from "./ListboxComponent";
-import { LocationAutocompleteConstants } from "../EntitlementCalcConstants";
+import { LocationAutocompleteConstants } from "../../EntitlementCalcConstants";
 import React from "react";
 import { StyledPopper } from "./StyledPopper";
 import { filterOptions } from "../../utils/locationAutocompleteUtils";

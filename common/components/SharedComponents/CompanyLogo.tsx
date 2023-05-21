@@ -1,6 +1,6 @@
 import { FC } from "react";
 import Image from "next/image";
-import { VaCalculatorLogoAlternateText } from "../EntitlementCalcConstants";
+import { VaCalculatorLogoAlternateText } from "../../../features/second-tier-entitlement/EntitlementCalcConstants";
 
 interface ICompanyLogoProps {
 	showTextLogo: boolean;

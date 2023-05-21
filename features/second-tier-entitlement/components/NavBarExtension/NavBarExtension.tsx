@@ -8,7 +8,7 @@ import {
 	paperStyle,
 } from "./NavBarExtensionStyles";
 import { MoreDetailsRow } from "./MoreDetailsRow";
-import { NavBarExtensionConstants } from "../EntitlementCalcConstants";
+import { NavBarExtensionConstants } from "../../EntitlementCalcConstants";
 import Typography from "@mui/material/Typography";
 import { formatNumberOrReturnDefault } from "../../utils/formatNumberOrReturnDefault";
 import { useEntitlementCalculations } from "../../hooks/useEntitlementCalculation";
