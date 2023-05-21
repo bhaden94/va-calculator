@@ -65,7 +65,7 @@ export const InputFormField: FC<IInputFormFieldProps> = ({
 				label={inputLabel}
 				value={value}
 				onChange={handleChange}
-				inputProps={{ maxLength: 9 }}
+				inputProps={{ maxLength: 9, pattern: "\d*" }}
 				startAdornment={
 					<InputAdornment position="start">$</InputAdornment>
 				}
