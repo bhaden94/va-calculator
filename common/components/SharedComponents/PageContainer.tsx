@@ -17,7 +17,11 @@ export const PageContainer: FC<IPageContainerProps> = ({
 	const appBarHeight = useAppBarHeight();
 
 	const sharedStyles: SxProps<Theme> = {
-		width: { xs: "100%", lg: "1200px" },
+		width: {
+			xs: "100%",
+			lg: "1200px",
+			minHeight: `calc(100vh - ${appBarHeight}px)`,
+		},
 		backgroundColor: "#fff",
 		...additionalStyles,
 	};
