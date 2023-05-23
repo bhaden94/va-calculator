@@ -1,14 +1,7 @@
-import {
-	Box,
-	Button,
-	Card,
-	CardActions,
-	CardContent,
-	CardHeader,
-	Typography,
-} from "@mui/material";
+import { Box, Typography } from "@mui/material";
+import { SecondTierEntitlementConstants } from "./HomeConstants";
+import { CalcCard } from "./components/CalcCard/CalcCard";
 import { FC } from "react";
-import Link from "next/link";
 
 export const CoreHomeComponent: FC = () => {
 	return (
@@ -37,23 +30,27 @@ export const CoreHomeComponent: FC = () => {
 				The Veterans Affairs (VA) calculator website is for calculating
 				different veteran benefits.
 			</Typography>
-			<Card
-				sx={{ borderRadius: "35px", padding: "8px", maxWidth: "400px" }}
+			<Box
+				sx={{
+					display: "flex",
+					flexDirection: "row",
+					gap: "2rem",
+					flexWrap: "wrap",
+					justifyContent: "center",
+				}}
 			>
-				<CardHeader title="Second Tier Entitlement Calculator" />
-				<CardContent sx={{ color: "#e8e8e8" }}>
-					Use our VA entitlement calculator if you already have a VA
-					loan and your used entitlement will not be restored prior to
-					closing on your new home.
-				</CardContent>
-				<CardActions sx={{ justifyContent: "center" }}>
-					<Button sx={{ fontSize: "1.17rem" }}>
-						<Link href="/second-tier-entitlement">
-							Use Calculator
-						</Link>
-					</Button>
-				</CardActions>
-			</Card>
+				<CalcCard
+					title={
+						SecondTierEntitlementConstants.Title
+					}
+					description={
+						SecondTierEntitlementConstants.Description
+					}
+					linkHref={
+						SecondTierEntitlementConstants.Href
+					}
+				/>
+			</Box>
 		</Box>
 	);
 };
