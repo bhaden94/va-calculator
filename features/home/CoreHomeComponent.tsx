@@ -1,5 +1,8 @@
 import { Box, Typography } from "@mui/material";
-import { SecondTierEntitlementConstants } from "./HomeConstants";
+import {
+	SecondTierEntitlementConstants,
+	HomePageTextConstants,
+} from "./HomeConstants";
 import { CalcCard } from "./components/CalcCard/CalcCard";
 import { FC } from "react";
 
@@ -17,7 +20,7 @@ export const CoreHomeComponent: FC = () => {
 				variant="h1"
 				sx={{ fontSize: "2rem", margin: "0 0 25px" }}
 			>
-				VA Calculators
+				{HomePageTextConstants.header}
 			</Typography>
 			<Typography
 				variant="h2"
@@ -27,8 +30,7 @@ export const CoreHomeComponent: FC = () => {
 					textAlign: "center",
 				}}
 			>
-				The Veterans Affairs (VA) calculator website is for calculating
-				different veteran benefits.
+				{HomePageTextConstants.slogan}
 			</Typography>
 			<Box
 				sx={{
@@ -40,15 +42,9 @@ export const CoreHomeComponent: FC = () => {
 				}}
 			>
 				<CalcCard
-					title={
-						SecondTierEntitlementConstants.Title
-					}
-					description={
-						SecondTierEntitlementConstants.Description
-					}
-					linkHref={
-						SecondTierEntitlementConstants.Href
-					}
+					title={SecondTierEntitlementConstants.title}
+					description={SecondTierEntitlementConstants.description}
+					linkHref={SecondTierEntitlementConstants.href}
 				/>
 			</Box>
 		</Box>

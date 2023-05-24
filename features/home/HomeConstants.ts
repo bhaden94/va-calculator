@@ -1,6 +1,11 @@
 export const SecondTierEntitlementConstants = {
-	Title: "Second Tier Entitlement Calculator",
-	Description:
+	title: "Second Tier Entitlement",
+	description:
 		"Use our VA entitlement calculator if you already have a VA loan and your used entitlement will not be restored prior to closing on your new home.",
-	Href: "/second-tier-entitlement",
+	href: "/second-tier-entitlement",
+};
+
+export const HomePageTextConstants = {
+	header: "VA Calculators",
+	slogan: "Navigate the complexities of U.S. Veteran benefits with VA Calculators - unleash the full potential of your VA benefits and make informed financial decisions.",
 };

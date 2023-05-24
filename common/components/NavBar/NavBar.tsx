@@ -1,23 +1,32 @@
 import * as React from "react";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
+import {
+	AppBar,
+	Box,
+	Button,
+	CssBaseline,
+	Divider,
+	Drawer,
+	IconButton,
+	List,
+	ListItem,
+	ListItemButton,
+	ListItemText,
+	SxProps,
+	Toolbar,
+	Typography,
+} from "@mui/material";
 import { CompanyLogo } from "../SharedComponents/CompanyLogo";
-import CssBaseline from "@mui/material/CssBaseline";
-import Divider from "@mui/material/Divider";
-import Drawer from "@mui/material/Drawer";
-import IconButton from "@mui/material/IconButton";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemText from "@mui/material/ListItemText";
+import Link from "next/link";
 import MenuIcon from "@mui/icons-material/Menu";
-import { SxProps } from "@mui/material";
+import { SecondTierEntitlementConstants } from "../../../features/home/HomeConstants";
 import { Theme } from "@emotion/react";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
 
-const navItems = ["Second Tier Entitlement"];
+const navItems = [
+	{
+		title: SecondTierEntitlementConstants.title,
+		href: SecondTierEntitlementConstants.href,
+	},
+];
 
 const outerBoxStyle: SxProps<Theme> = {
 	display: "flex",
@@ -71,9 +80,11 @@ export default function NavBar() {
 			<Divider variant="middle" />
 			<List>
 				{navItems.map((item) => (
-					<ListItem key={item} disablePadding>
+					<ListItem key={item.title} disablePadding>
 						<ListItemButton>
-							<ListItemText primary={item} />
+							<Link href={item.href}>
+								<ListItemText primary={item.title} />
+							</Link>
 						</ListItemButton>
 					</ListItem>
 				))}
@@ -115,7 +126,9 @@ export default function NavBar() {
 					</Typography>
 					<Box sx={navItemsBoxStyle}>
 						{navItems.map((item) => (
-							<Button key={item}>{item}</Button>
+							<Button key={item.title}>
+								<Link href={item.href}>{item.title}</Link>
+							</Button>
 						))}
 					</Box>
 				</Toolbar>
