@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { HomePriceInputConstants } from "../EntitlementCalcConstants";
+import { HomePriceInputConstants } from "../../EntitlementCalcConstants";
 import { InputFormField } from "./InputFormFields";
 import { useEntitlementDataInput } from "../../hooks/useEntitlementDataInput";
 

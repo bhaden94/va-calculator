@@ -1,5 +1,5 @@
 import { Head, Html, Main, NextScript } from "next/document";
-import Script from "next/script";
+// import Script from "next/script";
 
 export default function Document() {
 	return (
@@ -20,12 +20,12 @@ export default function Document() {
 				<link rel="manifest" href="/manifest.json" />
 				<link rel="apple-touch-icon" href="/icon.png"></link>
 				<meta name="theme-color" content="#fff" />
-				<Script
+				{/* <Script
 					async
 					src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.ADSENSE_ID}`}
 					strategy="lazyOnload"
 					crossOrigin="anonymous"
-				/>
+				/> */}
 			</Head>
 			<body>
 				<Main />

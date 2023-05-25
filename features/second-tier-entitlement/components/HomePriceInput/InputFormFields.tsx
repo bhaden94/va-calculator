@@ -5,7 +5,7 @@ import {
 	InputLabel,
 	OutlinedInput,
 } from "@mui/material";
-import { InformationPopup } from "../SharedComponents/InformationPopup";
+import { InformationPopup } from "../../../../common/components/SharedComponents/InformationPopup";
 import { inputMarginStyle } from "../LocationAutocomplete/LocationAutocompleteStyles";
 
 interface IInputFormFieldProps {

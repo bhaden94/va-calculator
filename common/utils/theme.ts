@@ -42,6 +42,9 @@ export const theme: Theme = createTheme({
 					background: `url('./${GOLD_GRADIENT_NAME}') no-repeat center center`,
 					fontWeight: "bold",
 				},
+				text: {
+					color: "#be9e44",
+				},
 			},
 		},
 		MuiListItemText: {
