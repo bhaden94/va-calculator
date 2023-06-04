@@ -1,37 +1,150 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# VA Calculator
 
+<!-- PROJECT SHIELDS -->
+<!--
+*** I'm using markdown "reference style" links for readability.
+*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
+*** See the bottom of this document for the declaration of the reference variables
+*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
+*** https://www.markdownguide.org/basic-syntax/#reference-style-links
+-->
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
+
+
+
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+  <a href="https://va-calculator.com">
+    <img src="./public/icon.png" alt="Logo" width="150" height="150">
+  </a>
+
+  <h3 align="center">VA Calculator</h3>
+
+  <p align="center">
+    Site to host calculator specific to Veterans.
+    <br />
+    <a href="https://va-calculator.com">View Live Application</a>
+    ·
+    <a href="https://github.com/bhaden94/va-calculator/issues">Report Bug/Request Feature</a>
+  </p>
+</p>
+
+
+
+<!-- TABLE OF CONTENTS -->
+## Table of Contents
+
+* [Built With](#built-with)
+* [Getting Started](#getting-started)
+  * [Prerequisites](#prerequisites)
+  * [Installation](#installation)
+* [Usage](#usage)
+* [Roadmap](#roadmap)
+* [Contributing](#contributing)
+* [License](#license)
+* [Contact](#contact)
+* [Acknowledgements](#acknowledgements)
+
+
+
+<!-- ABOUT THE PROJECT -->
+## Built With
+* [NextJS](https://nextjs.org/)
+* [Material-UI](https://material-ui.com/)
+
+
+
+<!-- GETTING STARTED -->
 ## Getting Started
 
-First, run the development server:
+To install the React frontend follow these steps below.
 
-```bash
+### Prerequisites
+
+Node and npm must be installed. How to do this can be found [here](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).
+
+### Installation
+
+1. Clone the repo
+```sh
+git clone https://github.com/bhaden94/covid-19-tracker-v2-fe.git
+```
+2. Install NPM packages
+```sh
+npm install
+```
+3. Start the react app
+```sh
 npm run dev
-# or
-yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+<!-- USAGE EXAMPLES -->
+## Usage
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+This app was built to create a common place to host calculators specific to Veterans and their benefits.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+<!-- ROADMAP -->
+## Roadmap
 
-## Learn More
+See the [open issues](https://github.com/bhaden94/va-calculator/issues) for a list of proposed features (and known issues).
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+<!-- CONTRIBUTING -->
+## Contributing
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Contributions are what make the open source community such an amazing place to be; learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-## Deploy on Vercel
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
+<!-- LICENSE -->
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+
+
+<!-- CONTACT -->
+## Contact
+
+Brady Haden - [LinkedIn](https://www.linkedin.com/in/brady-haden/)
+
+
+
+
+<!-- ACKNOWLEDGEMENTS -->
+## Acknowledgements
+* [Img Shields](https://shields.io)
+
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+<!-- [contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=flat-square
+[contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors -->
+[forks-shield]: https://img.shields.io/github/forks/bhaden94/covid-19-tracker-v2-fe.svg
+[forks-url]: https://github.com/bhaden94/covid-19-tracker-v2-fe/network/members
+
+[stars-shield]: https://img.shields.io/github/stars/bhaden94/covid-19-tracker-v2-fe.svg
+[stars-url]: https://github.com/bhaden94/covid-19-tracker-v2-fe/stargazers
+
+[issues-shield]: https://img.shields.io/github/issues/bhaden94/covid-19-tracker-v2-fe.svg
+[issues-url]: https://github.com/bhaden94/covid-19-tracker-v2-fe/issues
+
+[license-shield]: https://img.shields.io/github/license/bhaden94/covid-19-tracker-v2-fe.svg
+[license-url]: https://github.com/bhaden94/covid-19-tracker-v2-fe/blob/master/LICENSE.txt
+
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?logo=linkedin&colorB=555
+[linkedin-url]: https://www.linkedin.com/in/brady-haden/
+[product-screenshot]: images/screenshot.png
