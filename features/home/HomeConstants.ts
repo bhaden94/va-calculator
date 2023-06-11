@@ -1,3 +1,8 @@
+export const PrivacyPolicyConstants = {
+	title: "Privacy Policy",
+	href: "/privacy-policy",
+};
+
 export const SecondTierEntitlementConstants = {
 	title: "Second Tier Entitlement",
 	description:
@@ -9,3 +14,5 @@ export const HomePageTextConstants = {
 	header: "VA Calculators",
 	slogan: "Navigate the complexities of U.S. Veteran benefits with VA Calculators - unleash the full potential of your VA benefits and make informed financial decisions.",
 };
+
+export const HomePageTitleText = "VA Calculator";

@@ -11,6 +11,14 @@
         "listbox",
         "overscan",
         "collapsable",
-        "Overridable"
+        "Overridable",
+        "PRIVACYPOLICY",
+        "Haden",
+        "faviconit",
+        "msapplication",
+        "browserconfig",
+        "CCPA",
+        "Roadmap",
+        "ROADMAP"
     ]
 }

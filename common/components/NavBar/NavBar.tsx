@@ -15,16 +15,23 @@ import {
 	Toolbar,
 	Typography,
 } from "@mui/material";
+import {
+	PrivacyPolicyConstants,
+	SecondTierEntitlementConstants,
+} from "../../../features/home/HomeConstants";
 import { CompanyLogo } from "../SharedComponents/CompanyLogo";
 import Link from "next/link";
 import MenuIcon from "@mui/icons-material/Menu";
-import { SecondTierEntitlementConstants } from "../../../features/home/HomeConstants";
 import { Theme } from "@emotion/react";
 
 const navItems = [
 	{
 		title: SecondTierEntitlementConstants.title,
 		href: SecondTierEntitlementConstants.href,
+	},
+	{
+		title: PrivacyPolicyConstants.title,
+		href: PrivacyPolicyConstants.href,
 	},
 ];
 
