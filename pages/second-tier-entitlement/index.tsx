@@ -1,18 +1,28 @@
+import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import { BlogPost } from "../../common/components/SharedComponents/BlogPost";
 import { CoreEntitlementCalcComponent } from "../../features/second-tier-entitlement/CoreEntitlementCalcComponent";
 import { EntitlementDataRow } from "../../features/second-tier-entitlement/types/EntitlementModel";
+import { GetStaticProps } from "next";
 import Head from "next/head";
 import { PageContainer } from "../../common/components/SharedComponents/PageContainer";
 import React from "react";
-import SecondTierEntitlementPost from "../../common/blog-posts/SecondTierEntitlementPost.mdx";
 import { SecondTierEntitlementWebpageText } from "../../features/second-tier-entitlement/EntitlementCalcConstants";
 import { getNonOptimizedData } from "../../features/second-tier-entitlement/utils/localData";
+import { readFileSync } from "fs";
+import { serialize } from "next-mdx-remote/serialize";
 
 interface EntitlementDataProps {
 	nonOptimizedData: EntitlementDataRow[];
+	mdxSource: MDXRemoteSerializeResult;
 }
 
-const EntitlementData = ({ nonOptimizedData }: EntitlementDataProps) => {
+const SECOND_TIER_ENTITLEMENT_POST_DIR =
+	"common/blog-posts/SecondTierEntitlementPost.mdx";
+
+const EntitlementData = ({
+	nonOptimizedData,
+	mdxSource,
+}: EntitlementDataProps) => {
 	return (
 		<>
 			<Head>
@@ -23,16 +33,22 @@ const EntitlementData = ({ nonOptimizedData }: EntitlementDataProps) => {
 					entitlementData={nonOptimizedData}
 				/>
 				<BlogPost>
-					<SecondTierEntitlementPost />
+					<MDXRemote {...mdxSource} />
 				</BlogPost>
 			</PageContainer>
 		</>
 	);
 };
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps<{
+	nonOptimizedData: EntitlementDataRow[];
+	mdxSource: MDXRemoteSerializeResult;
+}> = async () => {
 	const nonOptimized = getNonOptimizedData();
-	return { props: { nonOptimizedData: nonOptimized } };
-}
+	const mdxSource = await serialize(
+		readFileSync(SECOND_TIER_ENTITLEMENT_POST_DIR, "utf8")
+	);
+	return { props: { nonOptimizedData: nonOptimized, mdxSource: mdxSource } };
+};
 
 export default EntitlementData;
