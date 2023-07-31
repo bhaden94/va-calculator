@@ -1,11 +1,10 @@
+import { Box, SxProps, Theme } from "@mui/material";
 import {
 	PrivacyPolicyPageDescription,
 	PrivacyPolicyPageTitleText,
 } from "../../features/privacy-policy/PrivacyPolicyConstants";
-import { SxProps, Theme } from "@mui/material";
 import { CorePrivacyPolicyComponent } from "../../features/privacy-policy/CorePrivacyPolicyComponent";
 import Head from "next/head";
-import { PageContainer } from "../../common/components/SharedComponents/PageContainer";
 
 const PrivacyPolicy = () => {
 	const privacyPolicyStyles: SxProps<Theme> = {
@@ -26,9 +25,9 @@ const PrivacyPolicy = () => {
 					content={PrivacyPolicyPageDescription}
 				/>
 			</Head>
-			<PageContainer additionalStyles={privacyPolicyStyles}>
+			<Box sx={privacyPolicyStyles}>
 				<CorePrivacyPolicyComponent />
-			</PageContainer>
+			</Box>
 		</>
 	);
 };

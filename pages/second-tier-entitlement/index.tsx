@@ -8,7 +8,6 @@ import { CoreEntitlementCalcComponent } from "../../features/second-tier-entitle
 import { EntitlementDataRow } from "../../features/second-tier-entitlement/types/EntitlementModel";
 import { GetStaticProps } from "next";
 import Head from "next/head";
-import { PageContainer } from "../../common/components/SharedComponents/PageContainer";
 import React from "react";
 import { getNonOptimizedData } from "../../features/second-tier-entitlement/utils/localData";
 import { readFileSync } from "fs";
@@ -35,14 +34,10 @@ const EntitlementData = ({
 					content={SecondTierEntitlementWebpageDescription}
 				/>
 			</Head>
-			<PageContainer>
-				<CoreEntitlementCalcComponent
-					entitlementData={nonOptimizedData}
-				/>
-				<BlogPost>
-					<MDXRemote {...mdxSource} />
-				</BlogPost>
-			</PageContainer>
+			<CoreEntitlementCalcComponent entitlementData={nonOptimizedData} />
+			<BlogPost>
+				<MDXRemote {...mdxSource} />
+			</BlogPost>
 		</>
 	);
 };

@@ -1,19 +1,15 @@
 import { Box, SxProps, Theme } from "@mui/material";
 import { FC } from "react";
-import NavBar from "../NavBar/NavBar";
+import NavBar from "./NavBar/NavBar";
 import { ThemeProvider } from "@mui/material";
-import { theme } from "../../utils/theme";
-import useAppBarHeight from "../../hooks/useAppBarHeight";
+import { theme } from "../utils/theme";
+import useAppBarHeight from "../hooks/useAppBarHeight";
 
-interface IPageContainerProps {
+interface ILayoutProps {
 	children: React.ReactNode;
-	additionalStyles?: SxProps<Theme>;
 }
 
-export const PageContainer: FC<IPageContainerProps> = ({
-	children,
-	additionalStyles,
-}) => {
+export const Layout: FC<ILayoutProps> = ({ children }) => {
 	const appBarHeight = useAppBarHeight();
 
 	const sharedStyles: SxProps<Theme> = {
@@ -23,7 +19,6 @@ export const PageContainer: FC<IPageContainerProps> = ({
 			minHeight: `calc(100vh - ${appBarHeight}px)`,
 		},
 		backgroundColor: "#fff",
-		...additionalStyles,
 	};
 
 	return (
