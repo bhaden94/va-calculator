@@ -8,6 +8,10 @@ const Home = () => {
 		<>
 			<Head>
 				<title>{HomePageTitleText}</title>
+				<meta
+					name="description"
+					content="The Veterans Affairs (VA) calculator website. Used for calculating United States Veteran benefits."
+				/>
 			</Head>
 			<CoreHomeComponent />
 		</>

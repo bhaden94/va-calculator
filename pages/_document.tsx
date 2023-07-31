@@ -6,10 +6,6 @@ export default function Document() {
 		<Html lang="en">
 			<Head>
 				<meta name="Veterans Affairs calculators." content="" />
-				<meta
-					name="description"
-					content="The Veterans Affairs (VA) calculator website. Used for calculating United States Veteran benefits."
-				/>
 				{/* <!-- ****** faviconit.com favicons ****** --> */}
 				<link rel="shortcut icon" href="/favicon.ico" />
 				<link rel="icon" sizes="16x16 32x32 64x64" href="/favicon.ico" />
