@@ -1,8 +1,11 @@
+import {
+	PrivacyPolicyPageDescription,
+	PrivacyPolicyPageTitleText,
+} from "../../features/privacy-policy/PrivacyPolicyConstants";
 import { SxProps, Theme } from "@mui/material";
 import { CorePrivacyPolicyComponent } from "../../features/privacy-policy/CorePrivacyPolicyComponent";
 import Head from "next/head";
 import { PageContainer } from "../../common/components/SharedComponents/PageContainer";
-import { PrivacyPolicyPageTitleText } from "../../features/privacy-policy/PrivacyPolicyConstants";
 
 const PrivacyPolicy = () => {
 	const privacyPolicyStyles: SxProps<Theme> = {
@@ -18,6 +21,10 @@ const PrivacyPolicy = () => {
 		<>
 			<Head>
 				<title>{PrivacyPolicyPageTitleText}</title>
+				<meta
+					name="description"
+					content={PrivacyPolicyPageDescription}
+				/>
 			</Head>
 			<PageContainer additionalStyles={privacyPolicyStyles}>
 				<CorePrivacyPolicyComponent />

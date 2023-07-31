@@ -24,5 +24,6 @@ export const NavBarExtensionConstants = {
 };
 
 export const SecondTierEntitlementWebpageText = "VA Calculator - Second Tier Entitlement";
+export const SecondTierEntitlementWebpageDescription = "The Second tier entitlement calculator for Veterans Affair (VA) home loans.";
 
 export const VaCalculatorLogoAlternateText = "VA Calculator logo"

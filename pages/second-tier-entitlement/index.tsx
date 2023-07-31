@@ -1,4 +1,8 @@
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
+import {
+	SecondTierEntitlementWebpageDescription,
+	SecondTierEntitlementWebpageText,
+} from "../../features/second-tier-entitlement/EntitlementCalcConstants";
 import { BlogPost } from "../../common/components/SharedComponents/BlogPost";
 import { CoreEntitlementCalcComponent } from "../../features/second-tier-entitlement/CoreEntitlementCalcComponent";
 import { EntitlementDataRow } from "../../features/second-tier-entitlement/types/EntitlementModel";
@@ -6,7 +10,6 @@ import { GetStaticProps } from "next";
 import Head from "next/head";
 import { PageContainer } from "../../common/components/SharedComponents/PageContainer";
 import React from "react";
-import { SecondTierEntitlementWebpageText } from "../../features/second-tier-entitlement/EntitlementCalcConstants";
 import { getNonOptimizedData } from "../../features/second-tier-entitlement/utils/localData";
 import { readFileSync } from "fs";
 import { serialize } from "next-mdx-remote/serialize";
@@ -27,6 +30,10 @@ const EntitlementData = ({
 		<>
 			<Head>
 				<title>{SecondTierEntitlementWebpageText}</title>
+				<meta
+					name="description"
+					content={SecondTierEntitlementWebpageDescription}
+				/>
 			</Head>
 			<PageContainer>
 				<CoreEntitlementCalcComponent

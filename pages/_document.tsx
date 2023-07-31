@@ -8,9 +8,7 @@ export default function Document() {
 				<meta name="Veterans Affairs calculators." content="" />
 				<meta
 					name="description"
-					content="The Veterans Affairs (VA) calculator website is for 
-					calculating different veteran benefits. Currently, the VA loan
-					second tier entitlement is the main calculator."
+					content="The Veterans Affairs (VA) calculator website. Used for calculating United States Veteran benefits."
 				/>
 				{/* <!-- ****** faviconit.com favicons ****** --> */}
 				<link rel="shortcut icon" href="/favicon.ico" />
