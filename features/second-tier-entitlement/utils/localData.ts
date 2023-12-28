@@ -8,6 +8,7 @@ import path from "path";
 
 const DATA_FOLDER: string = "data";
 const DATA_FILE_NAME_2023: string = "2023_us_entitlement_data.csv";
+const DATA_FILE_NAME_2024: string = "2024_us_entitlement_data.csv";
 
 const optimizeDataForZipCodeQuery = (
 	entitlementData: EntitlementDataRow[]
@@ -18,7 +19,7 @@ const optimizeDataForZipCodeQuery = (
 };
 
 export const getLocalEntitlementData = (): OptimizedEntitlementData => {
-	const filePath = path.join(process.cwd(), DATA_FOLDER, DATA_FILE_NAME_2023);
+	const filePath = path.join(process.cwd(), DATA_FOLDER, DATA_FILE_NAME_2024);
 	const fileContent = fs.readFileSync(filePath, "utf-8");
 	const { data } = Papa.parse<EntitlementDataRow>(fileContent, {
 		header: true,
@@ -28,7 +29,7 @@ export const getLocalEntitlementData = (): OptimizedEntitlementData => {
 };
 
 export const getNonOptimizedData = (): EntitlementDataRow[] => {
-	const filePath = path.join(process.cwd(), DATA_FOLDER, DATA_FILE_NAME_2023);
+	const filePath = path.join(process.cwd(), DATA_FOLDER, DATA_FILE_NAME_2024);
 	const fileContent = fs.readFileSync(filePath, "utf-8");
 	const { data } = Papa.parse<EntitlementDataRow>(fileContent, {
 		header: true,
