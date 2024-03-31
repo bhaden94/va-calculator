@@ -28,10 +28,6 @@ export default function Document() {
 				<meta name="msapplication-TileImage" content="/favicon-144.png" />
 				<meta name="msapplication-config" content="/browserconfig.xml" />
 				{/* <!-- ****** faviconit.com favicons ****** --> */}
-				<link
-					href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Sofia+Sans+Semi+Condensed:wght@400;700&display=swap"
-					rel="stylesheet"
-				/>
 				<link rel="manifest" href="/manifest.json" />
 				<link rel="apple-touch-icon" href="/icon.png"></link>
 				<meta name="theme-color" content="#fff" />
