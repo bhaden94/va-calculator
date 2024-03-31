@@ -1,9 +1,29 @@
 import { Theme, createTheme } from "@mui/material/styles";
+import { Open_Sans, Sofia_Sans_Semi_Condensed } from "next/font/google";
 
 const BLACK_GRADIENT_NAME = "background-gradient.svg";
 const GOLD_GRADIENT_NAME = "gold-gradient.svg";
 
+const openSans = Open_Sans({
+	weight: ["300", "400", "500", "700"],
+	subsets: ["latin"],
+	display: "swap",
+});
+
+const sofiaSans = Sofia_Sans_Semi_Condensed({
+	weight: ["300", "400", "500", "700"],
+	subsets: ["latin"],
+	display: "swap",
+});
+
 export const theme: Theme = createTheme({
+	typography: {
+		fontFamily: openSans.style.fontFamily,
+		h1: { fontFamily: sofiaSans.style.fontFamily },
+		h2: { fontFamily: sofiaSans.style.fontFamily },
+		h3: { fontFamily: sofiaSans.style.fontFamily },
+		h4: { fontFamily: sofiaSans.style.fontFamily },
+	},
 	palette: {
 		contrastThreshold: 4.5,
 		primary: {
