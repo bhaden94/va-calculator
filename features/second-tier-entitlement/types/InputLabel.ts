@@ -1,4 +1,4 @@
 export enum InputLabel {
-	OriginalLoanAmount = "Original Loan Amount",
-	NewHomePrice = "New Home Price",
+  OriginalLoanAmount = "Original Loan Amount",
+  NewHomePrice = "New Home Price",
 }

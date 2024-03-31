@@ -4,19 +4,19 @@ import { Layout } from "../common/components/Layout";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-	manifest: "/manifest.json",
+  manifest: "/manifest.json",
 };
 
 export default function RootLayout({
-	children,
+  children,
 }: {
-	children: React.ReactNode;
+  children: React.ReactNode;
 }) {
-	return (
-		<html lang="en">
-			<body>
-				<Layout>{children}</Layout>
-			</body>
-		</html>
-	);
+  return (
+    <html lang="en">
+      <body>
+        <Layout>{children}</Layout>
+      </body>
+    </html>
+  );
 }
