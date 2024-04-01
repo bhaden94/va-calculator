@@ -1,3 +1,5 @@
+"use client";
+
 import {
   LISTBOX_PADDING,
   useResetCache,

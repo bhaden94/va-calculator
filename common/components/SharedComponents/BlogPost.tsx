@@ -1,3 +1,5 @@
+"use client";
+
 import { Box, styled } from "@mui/material";
 import { FC } from "react";
 
@@ -26,5 +28,9 @@ const StyledBlogPost = styled(Box)(({ theme }) =>
 );
 
 export const BlogPost: FC<IBlogPostProps> = ({ children }) => {
-  return <StyledBlogPost>{children}</StyledBlogPost>;
+  return (
+    <StyledBlogPost>
+      <>{children}</>
+    </StyledBlogPost>
+  );
 };

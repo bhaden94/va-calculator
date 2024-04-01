@@ -1,3 +1,5 @@
+"use client";
+
 import { Popper, autocompleteClasses, styled } from "@mui/material";
 
 export const StyledPopper = styled(Popper)(({ theme }) =>

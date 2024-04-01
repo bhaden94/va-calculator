@@ -1,4 +1,4 @@
-import { createTheme,Theme } from "@mui/material/styles";
+import { createTheme, Theme } from "@mui/material/styles";
 import { Open_Sans, Sofia_Sans_Semi_Condensed } from "next/font/google";
 
 const BLACK_GRADIENT_NAME = "background-gradient.svg";

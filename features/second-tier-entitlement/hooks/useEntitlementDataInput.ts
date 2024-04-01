@@ -1,3 +1,5 @@
+"use client";
+
 import { EntitlementDataContext } from "../context/EntitlementDataContext";
 import { EntitlementDataContextValue } from "../types/EntitlementDataContextValue";
 import { useContext } from "react";

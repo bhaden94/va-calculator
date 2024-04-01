@@ -1,3 +1,5 @@
+"use client";
+
 import { Autocomplete, TextField } from "@mui/material";
 import { EntitlementDataRow } from "../../types/EntitlementModel";
 import { FC } from "react";
@@ -13,7 +15,7 @@ interface ILocationAutocompleteProps {
   entitlementData: EntitlementDataRow[];
 }
 
-export const LocationAutocomplete: FC<ILocationAutocompleteProps> = ({
+const LocationAutocomplete: FC<ILocationAutocompleteProps> = ({
   entitlementData,
 }) => {
   const { chosenEntitlementDataState } = useEntitlementDataInput();
@@ -52,3 +54,5 @@ export const LocationAutocomplete: FC<ILocationAutocompleteProps> = ({
     </div>
   );
 };
+
+export default LocationAutocomplete;

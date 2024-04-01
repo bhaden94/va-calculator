@@ -1,3 +1,5 @@
+"use client";
+
 import { Box, Typography } from "@mui/material";
 import { leftColumn, rightColumn, row } from "./NavBarExtensionStyles";
 import { FC } from "react";

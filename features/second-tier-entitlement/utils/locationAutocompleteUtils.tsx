@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useRef } from "react";
 import { EntitlementDataRow } from "../types/EntitlementModel";
 import { VariableSizeList } from "react-window";

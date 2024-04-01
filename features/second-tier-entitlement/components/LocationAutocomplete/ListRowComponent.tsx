@@ -1,3 +1,5 @@
+"use client";
+
 import { ListSubheader, Typography, useTheme } from "@mui/material";
 import { FC } from "react";
 import { LISTBOX_PADDING } from "../../utils/locationAutocompleteUtils";

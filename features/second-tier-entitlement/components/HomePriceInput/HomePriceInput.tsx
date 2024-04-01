@@ -1,3 +1,5 @@
+"use client";
+
 import { FC } from "react";
 import { HomePriceInputConstants } from "../../EntitlementCalcConstants";
 import { InputFormField } from "./InputFormFields";

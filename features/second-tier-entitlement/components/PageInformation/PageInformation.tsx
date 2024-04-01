@@ -1,3 +1,5 @@
+"use client";
+
 import { Box, SxProps, Theme, Typography } from "@mui/material";
 import { FC } from "react";
 

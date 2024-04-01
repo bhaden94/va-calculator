@@ -1,11 +1,13 @@
+"use client";
+
 import { Box, SxProps, Theme } from "@mui/material";
 import { EntitlementDataProvider } from "./context/EntitlementDataContext";
 import { EntitlementDataRow } from "./types/EntitlementModel";
 import { FC } from "react";
 import { HomePriceInput } from "./components/HomePriceInput/HomePriceInput";
-import { LocationAutocomplete } from "./components/LocationAutocomplete/LocationAutocomplete";
 import { NavBarExtension } from "./components/NavBarExtension/NavBarExtension";
 import { PageInformation } from "./components/PageInformation/PageInformation";
+import LocationAutocomplete from "./components/LocationAutocomplete/LocationAutocomplete";
 
 interface ICoreEntitlementCalcComponentProps {
   entitlementData: EntitlementDataRow[];

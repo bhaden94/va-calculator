@@ -1,3 +1,5 @@
+"use client";
+
 import { SxProps } from "@mui/material";
 import { Theme } from "@emotion/react";
 
