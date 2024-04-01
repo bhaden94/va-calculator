@@ -1,20 +1,10 @@
 {
+  "extends": "next",
+  "plugins": ["simple-import-sort", "unused-imports"],
   "rules": {
-    "sort-imports": [
-      "error",
-      {
-        "ignoreCase": false,
-        "ignoreDeclarationSort": false,
-        "ignoreMemberSort": false,
-        "memberSyntaxSortOrder": [
-          "none",
-          "all",
-          "multiple",
-          "single"
-        ],
-        "allowSeparatedGroups": false
-      }
-    ]
-  },
-  "extends": "next/core-web-vitals"
+    "simple-import-sort/imports": "warn",
+    "simple-import-sort/exports": "warn",
+    "react-hooks/exhaustive-deps": "error",
+    "unused-imports/no-unused-imports": "error"
+  }
 }
