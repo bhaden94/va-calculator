@@ -2,23 +2,22 @@
 
 import { Autocomplete, TextField } from "@mui/material";
 import { EntitlementDataRow } from "../../types/EntitlementModel";
-import { FC } from "react";
+import { FC, useState } from "react";
 import { ListboxComponent } from "./ListboxComponent";
 import { LocationAutocompleteConstants } from "../../EntitlementCalcConstants";
 import React from "react";
 import { StyledPopper } from "./StyledPopper";
-import { filterOptions } from "../../utils/locationAutocompleteUtils";
 import { inputMarginStyle } from "./LocationAutocompleteStyles";
 import { useEntitlementDataInput } from "../../hooks/useEntitlementDataInput";
+import useDebouncedFetch from "../../../../common/hooks/useDebouncedFetch";
 
-interface ILocationAutocompleteProps {
-  entitlementData: EntitlementDataRow[];
-}
-
-const LocationAutocomplete: FC<ILocationAutocompleteProps> = ({
-  entitlementData,
-}) => {
+const LocationAutocomplete: FC = () => {
   const { chosenEntitlementDataState } = useEntitlementDataInput();
+  const [searchData, setSearchData] = useState<string>();
+  const { data, isLoading } = useDebouncedFetch<EntitlementDataRow>(
+    "/api/second-tier-entitlement",
+    searchData,
+  );
 
   return (
     <div style={{ width: "100%" }}>
@@ -26,17 +25,25 @@ const LocationAutocomplete: FC<ILocationAutocompleteProps> = ({
         id="location-autocomplete"
         fullWidth
         sx={inputMarginStyle}
-        onChange={(e: any, newValue: EntitlementDataRow | null) => {
+        onChange={(_: any, newValue: EntitlementDataRow | null) => {
           chosenEntitlementDataState.setChosenEntitlementDataRow(newValue);
+          setSearchData("");
+        }}
+        onInputChange={(_, newInputValue) => {
+          // Need at least 3 character input before searching
+          if (newInputValue.length < 3) return;
+          setSearchData(newInputValue);
         }}
         disableListWrap
         blurOnSelect
         openOnFocus
         PopperComponent={StyledPopper}
         ListboxComponent={ListboxComponent}
-        options={entitlementData}
+        options={data}
+        noOptionsText="Search by zip code, county, or state."
+        loading={isLoading}
         groupBy={(option) => option.state}
-        filterOptions={filterOptions}
+        filterOptions={(x) => x}
         getOptionLabel={(option) =>
           `${option.zipCode}, ${option.county}, ${option.state}`
         }

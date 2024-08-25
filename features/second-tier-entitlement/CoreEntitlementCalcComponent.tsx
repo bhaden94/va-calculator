@@ -2,16 +2,11 @@
 
 import { Box, SxProps, Theme } from "@mui/material";
 import { EntitlementDataProvider } from "./context/EntitlementDataContext";
-import { EntitlementDataRow } from "./types/EntitlementModel";
 import { FC } from "react";
 import { HomePriceInput } from "./components/HomePriceInput/HomePriceInput";
 import { NavBarExtension } from "./components/NavBarExtension/NavBarExtension";
 import { PageInformation } from "./components/PageInformation/PageInformation";
 import LocationAutocomplete from "./components/LocationAutocomplete/LocationAutocomplete";
-
-interface ICoreEntitlementCalcComponentProps {
-  entitlementData: EntitlementDataRow[];
-}
 
 const outerBoxRow: SxProps<Theme> = {
   display: { sm: "flex" },
@@ -40,9 +35,7 @@ const inputsBox: SxProps<Theme> = {
   },
 };
 
-export const CoreEntitlementCalcComponent: FC<
-  ICoreEntitlementCalcComponentProps
-> = ({ entitlementData }) => {
+export const CoreEntitlementCalcComponent: FC = () => {
   return (
     <Box sx={outerBoxRow}>
       <EntitlementDataProvider>
@@ -52,7 +45,7 @@ export const CoreEntitlementCalcComponent: FC<
         <Box sx={innerBoxColumn}>
           <Box sx={inputsBox}>
             <PageInformation />
-            <LocationAutocomplete entitlementData={entitlementData} />
+            <LocationAutocomplete />
             <HomePriceInput />
           </Box>
         </Box>
