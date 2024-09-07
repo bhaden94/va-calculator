@@ -1,5 +1,5 @@
 import { debounce } from "@mui/material";
-import { useEffect,useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 function useDebouncedFetch<T>(
   url: string,
